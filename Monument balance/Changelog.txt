@@ -1,0 +1,28 @@
+Monument balance v1
+
+Compatible with Victoria 3 patch 1.8.X
+
+This mod seeks to rebalance the effects of unique buildings, toning down countrywide effects in favor of local state effects. It also adds prestige-only effects for religion-associated unique buildings.
+
+Current changes:
+* Adds prestige-only (25 prestige) production methods for:
+** Ankor Wat (for non-Buddhist/Hindu)
+** Cristo Redentor (for non-Catholic)
+** Hagia Sofia (for non-Orthodox/Muslim)
+** Mosque of Djenne (for non-Muslim)
+** Saint Basils Cathedral (for non-Orthodox)
+
+* The following unique building effects have been changed:
+** Ankor Wat: +25% Devout political strength > (Buddhist/Hindu only) +15% Devout pop attraction, +10% local Clergymen political strength
+** Cristo Redentor: +15% Devout political strength > (Catholic only) +5% Devout pop attraction, +10% local Clergymen political strength
+** Mosque of Djenne: +10% Devout political strength, +20% local education access > (Muslim only) +5% Devout pop attraction, +5% local Clergymen political strength, +2% education access, +18% local education access
+** Saint Basils Cathedral: +10% Devout political strength > (Orthodox only) +5% Devout pop attraction, +5% local Clergymen political strength
+** Statue of Liberty: +25% migration attraction > +10% migration attraction, +15% local migration attraction
+** Vatican City: 25% Devout political strength > (Catholic only) 10% Devout pop attraction, 15% local Clergymen political strength
+** Victoria Terminus: +20% railway throughput > +5% railway throughput, +15% local railway throughput
+
+v2:
+Add localization for all vanilla supported languages
+
+v3:
+Change file format to increase compatibility

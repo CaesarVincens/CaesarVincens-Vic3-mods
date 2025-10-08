@@ -1,0 +1,13 @@
+{
+  "name":"Monument Balance",
+  "id":"3456272784",
+  "version":"v3",
+  "supported_game_version":"1.8.*",
+  "thumbnail" : "thumbnail.png",
+  "short_description":"This mod seeks to rebalance the effects of unique buildings, toning down countrywide effects in favor of local state effects. It also adds prestige-only effects for religion-associated unique buildings. Feel free to incorporate these changes into your own published mod with an acknowledgement.",
+  "tags":["Balance","Economy and Buildings"],
+  "relationships":[],
+  "game_custom_data" : {
+    "multiplayer_synchronized" : true
+  }
+}
