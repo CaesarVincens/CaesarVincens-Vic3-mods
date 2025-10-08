@@ -1,0 +1,164 @@
+﻿upc_tools_to_clips = {
+	value = 0
+	add = root.modifier:country_tools_to_clips_mult
+	min = 0
+	if = {
+		limit = { game_date <= 1836.1.2 }
+		min = 0.2
+	}
+	desc = upc_tools_to_clips_desc
+}
+upc_iron_to_clips = {
+	value = 0
+	add = root.modifier:country_iron_to_clips_mult
+	min = 0
+	if = {
+		limit = { game_date <= 1836.1.2 }
+		min = 0.1
+	}
+	desc = upc_iron_to_clips_desc
+}
+upc_lead_to_clips = {
+	value = 0
+	add = root.modifier:country_lead_to_clips_mult
+	min = 0
+	if = {
+		limit = { game_date <= 1836.1.2 }
+		min = 0.05
+	}
+	desc = upc_lead_to_clips_desc
+}
+upc_steel_to_clips = {
+	value = 0
+	add = root.modifier:country_steel_to_clips_mult
+	min = 0
+	if = {
+		limit = { game_date <= 1836.1.2 }
+		min = 0.05
+	}
+	desc = upc_steel_to_clips_desc
+}
+
+upc_tools_production_value = {
+	value = 0
+	every_scope_state = {
+		add = { value = this.sg:tools.state_goods_production multiply = root.upc_tools_to_clips }
+	}
+}
+upc_iron_production_value = {
+	value = 0
+	every_scope_state = {
+		add = { value = this.sg:iron.state_goods_production multiply = root.upc_iron_to_clips }
+	}
+}
+upc_lead_production_value = {
+	value = 0
+	every_scope_state = {
+		add = { value = this.sg:lead.state_goods_production multiply = root.upc_lead_to_clips }
+	}
+}
+upc_steel_production_value = {
+	value = 0
+	every_scope_state = {
+		add = { value = this.sg:steel.state_goods_production multiply = root.upc_steel_to_clips }
+	}
+}
+upc_clips_production_value = {
+	value = 0
+	add = root.upc_tools_production_value
+	add = root.upc_iron_production_value
+	add = root.upc_lead_production_value
+	add = root.upc_steel_production_value
+}
+
+upc_clips_production_monthly_value = {
+	value = upc_clips_production_value
+	multiply = 4
+}
+upc_set_monthly_quota_12 = {
+	value = upc_clips_production_value
+	multiply = 4
+	multiply =  1.2
+	min = 100
+	if = {
+		limit = { has_variable = upc_anti_cheese }
+		multiply = 1.2
+	}
+}
+upc_set_monthly_quota_10 = {
+	value = upc_clips_production_value
+	multiply = 4
+	multiply = {
+		value = upc_quota_percent
+		min = 0.05
+	}
+	min = 100
+	if = {
+		limit = { has_variable = upc_anti_cheese }
+		multiply = 1.2
+	}
+}
+upc_predicted_quota = {
+	value = upc_clips_production_value
+	multiply = 4
+	multiply = {
+		if = {
+			limit = {
+				upc_quota_predicted_percent >= 1
+			}
+			value = 1.2
+
+		}
+		else = {
+			value = upc_quota_predicted_percent
+			min = 0.05
+		}
+	}
+	if = {
+		limit = { has_variable = upc_anti_cheese }
+		multiply = 1.2
+	}
+	multiply = 60
+	
+}
+upc_monthly_quota_value = {
+	value = 0
+	if = {
+		limit = {
+			has_variable = upc_quota
+		}
+		add = var:upc_quota
+	}
+	min = 100
+}
+
+upc_weekly_quota_value = {
+	value = upc_monthly_quota_value
+	divide = 4
+}
+
+upc_annual_quota_value = {
+	value = upc_monthly_quota_value
+	multiply = 12
+}
+
+upc_quintannual_quota_value = {
+	value = upc_monthly_quota_value
+	multiply = 60
+}
+
+upc_quota_percent = {
+	value = var:upc_produced
+	divide = upc_quintannual_quota_value
+	round_to = 0.01
+	min = 0.05
+	max = 2
+}
+
+upc_quota_predicted_percent = {
+	value = var:upc_produced
+	add = var:upc_prediction
+	divide = upc_quintannual_quota_value
+	round_to = 0.01
+	min = 0.05
+}

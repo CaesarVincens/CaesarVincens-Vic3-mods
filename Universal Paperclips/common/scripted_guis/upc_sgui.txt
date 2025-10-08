@@ -1,0 +1,23 @@
+﻿upc_topbar_element_quota = {
+	scope = country
+
+	is_shown = {
+		has_journal_entry = je_upc_tracking
+	}
+}
+
+upc_topbar_element_production = {
+	scope = country
+
+	is_shown = {
+		has_journal_entry = je_upc_tracking
+	}
+}
+
+upc_topbar_element_total_production = {
+	scope = country
+
+	is_shown = {
+		has_journal_entry = je_upc_tracking
+	}
+}

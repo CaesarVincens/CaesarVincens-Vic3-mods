@@ -1,0 +1,67 @@
+﻿fontfiles = {
+    name = "UPC_Paperclip_Regular"
+    always_load = yes
+
+    group = {
+        languages = { "l_english" "l_braz_por" "l_french" "l_german" "l_polish" "l_russian" "l_spanish" "l_turkish" }
+        files = {
+            "fonts/Paperclip/Paperclip-Regular.ttf"
+            "fonts/NotoSans/NotoSansJP-Regular.otf"
+            "fonts/NotoSans/NotoSansKR-Regular.otf"
+            "fonts/NotoSans/NotoSansSC-Regular.otf"
+            "fonts/Paperclip/Paperclip-Regular.ttf"
+        }
+    }
+    
+    group = {
+        languages = { "l_japanese" }
+        files = {
+            "fonts/NotoSans/NotoSansJP-Regular.otf"
+            "fonts/Paperclip/Paperclip-Regular.ttf"
+            "fonts/NotoSans/NotoSansKR-Regular.otf"
+            "fonts/NotoSans/NotoSansSC-Regular.otf"
+            "fonts/NotoSans/NotoSans-Regular.ttf"
+        }
+    }
+
+    group = {
+        languages = { "l_korean" }
+        files = {
+            "fonts/NotoSans/NotoSansKR-Regular.otf"
+            "fonts/Paperclip/Paperclip-Regular.ttf"
+            "fonts/NotoSans/NotoSansJP-Regular.otf"
+            "fonts/NotoSans/NotoSansSC-Regular.otf"
+            "fonts/NotoSans/NotoSans-Regular.ttf"
+        }
+    }
+    
+    group = {
+        languages = { "l_simp_chinese" }
+        files = {
+            "fonts/NotoSans/NotoSansSC-Regular.otf"
+            "fonts/Paperclip/Paperclip-Regular.ttf"
+            "fonts/NotoSans/NotoSansJP-Regular.otf"
+            "fonts/NotoSans/NotoSansKR-Regular.otf"
+            "fonts/NotoSans/NotoSans-Regular.ttf"
+        }
+    }
+}
+
+font = {
+    name = "upc_paperclip_font"
+    
+    fontstyle = {
+        style = regular
+        fontfiles = "UPC_Paperclip_Regular"
+    }
+        
+    fontstyle = {
+        style = italic
+        fontfiles = "UPC_Paperclip_Regular"
+    }
+        
+    fontstyle = {
+        style = bold
+        fontfiles = "UPC_Paperclip_Regular"
+    }
+}

@@ -1,0 +1,35 @@
+﻿country_tools_to_clips_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+country_iron_to_clips_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+country_steel_to_clips_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+country_lead_to_clips_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

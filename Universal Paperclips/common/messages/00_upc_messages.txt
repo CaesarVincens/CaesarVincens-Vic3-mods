@@ -1,0 +1,23 @@
+﻿upc_quota_met_notice = {
+	type = country
+	group = "journal_entry_completed_notification_group"
+
+	texture = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	notification_type = toast
+	color = good
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/Toasts/journal_entry_completed"
+}
+
+upc_quota_failed_notice = {
+	type = country
+	group = "journal_entry_completed_notification_group"
+
+	texture = "gfx/interface/icons/event_icons/event_single_paperclip.dds"
+
+	notification_type = toast
+	color = bad
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/Toasts/journal_entry_completed"
+}

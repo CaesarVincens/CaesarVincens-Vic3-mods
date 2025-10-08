@@ -1,0 +1,43 @@
+﻿upc_tracking_bar = {
+	name = "UPC_tracking_bar_title"
+	desc = "UPC_tracking_bar_desc"
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+	default = yes
+	weekly_progress = {
+		add = {
+			desc = "UPC_tracking_bar_tools_weekly"
+			value = {
+				value = upc_tools_production_value
+				divide = upc_quintannual_quota_value
+				multiply = 100
+			}
+		}
+		add = {
+			desc = "UPC_tracking_bar_iron_weekly"
+			value = {
+				value = upc_iron_production_value
+				divide = upc_quintannual_quota_value
+				multiply = 100
+			}
+		}
+		add = {
+			desc = "UPC_tracking_bar_steel_weekly"
+			value = {
+				value = upc_steel_production_value
+				divide = upc_quintannual_quota_value
+				multiply = 100
+			}
+		}
+		add = {
+			desc = "UPC_tracking_bar_lead_weekly"
+			value = {
+				value = upc_lead_production_value
+				divide = upc_quintannual_quota_value
+				multiply = 100
+			}
+		}
+	}
+}

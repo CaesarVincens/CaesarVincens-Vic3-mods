@@ -1,0 +1,26 @@
+texticon = {
+  icon = upc_quota
+  iconsize = {
+    offset = { 0 32 }
+    texture = "gfx/interface/icons/texticons/texticon_three_paperclips.dds"
+    fontsize = 85
+  }
+}
+
+texticon = {
+  icon = upc_production
+  iconsize = {
+    offset = { 0 32 }
+    texture = "gfx/interface/icons/texticons/texticon_single_paperclip.dds"
+    fontsize = 85
+  }
+}
+
+texticon = {
+  icon = upc_paperclip
+  iconsize = {
+    offset = { 0 32 }
+    texture = "gfx/interface/icons/texticons/texticon_single_paperclip.dds"
+    fontsize = 85
+  }
+}

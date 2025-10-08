@@ -1,0 +1,42 @@
+﻿upc_quota_met = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_paperclip_positive.dds
+	country_prestige_mult = 0.1
+	country_legitimacy_base_add = 5
+}
+
+upc_quota_failed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_paperclip_negative.dds
+	country_prestige_mult = -0.1
+	country_legitimacy_base_add = -5
+}
+
+upc_milestone_prestige_1 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_paperclip_positive.dds
+	country_prestige_add = 1
+}
+upc_milestone_prestige_2 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_paperclip_positive.dds
+	country_prestige_add = 1
+}
+upc_je_production_boost_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	#building_tooling_workshops_throughput_add = -0.05
+	country_tools_to_clips_mult = 0.30
+	country_iron_to_clips_mult = 0.15
+	country_lead_to_clips_mult = 0.075
+	country_steel_to_clips_mult = 0.075
+}
+upc_je_production_boost_modifier_building = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	building_throughput_add = -0.1
+	building_engineers_mortality_mult = 0.1
+	building_laborers_mortality_mult = 0.1
+	building_machinists_mortality_mult = 0.1
+}
+upc_je_basic_clip_production = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_tools_to_clips_mult = 0.2
+	country_iron_to_clips_mult = 0.1
+	country_lead_to_clips_mult = 0.05
+	country_steel_to_clips_mult = 0.05
+}

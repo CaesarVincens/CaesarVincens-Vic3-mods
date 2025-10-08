@@ -1,0 +1,25 @@
+﻿l_english:
+ upc_topbar_mod_source: "Universal Paperclips"
+ upc_topbar_mod_source_tooltip: "This element is part of the Universal Paperclips mod."
+
+ upc_topbar_element_quota: "upc_topbar_element_quota"
+ upc_topbar_element_quota_icon: "@upc_quota!"
+ upc_topbar_element_quota_value: "[GetPlayer.MakeScope.ScriptValue('upc_quintannual_quota_value')|v*]"
+ upc_topbar_element_quota_tooltip: "Our current [Concept('concept_paperclips','$concept_paperclip$')] production quota is [GetPlayer.MakeScope.ScriptValue('upc_quintannual_quota_value')|v*]"
+ upc_topbar_element_quota_source: "$upc_topbar_mod_source$"
+ upc_topbar_element_quota_source_tooltip: "$upc_topbar_mod_source_tooltip$"
+
+ upc_topbar_element_production: "upc_topbar_element_production"
+ upc_topbar_element_production_icon: "@upc_production!"
+ upc_topbar_element_production_value: "[GetPlayer.MakeScope.ScriptValue('upc_clips_production_monthly_value')|v*]"
+ upc_topbar_element_production_tooltip: "Our current monthly [Concept('concept_paperclips','$concept_paperclip$')] production is #tooltippable;TOOLTIP:upc_topbar_element_production_breakdown [GetPlayer.MakeScope.ScriptValue('upc_clips_production_monthly_value')|v*]#!"
+ upc_topbar_element_production_source: "$upc_topbar_mod_source$"
+ upc_topbar_element_production_source_tooltip: "$upc_topbar_mod_source_tooltip$"
+ upc_topbar_element_production_breakdown: "From [GetGoods('tools').GetTextIcon] [GetGoods('tools').GetName]: [Multiply_CFixedPoint(GetPlayer.MakeScope.ScriptValue('upc_tools_production_value'), '(CFixedPoint)4')|v*]\nFrom [GetGoods('iron').GetTextIcon] [GetGoods('iron').GetName]: [Multiply_CFixedPoint(GetPlayer.MakeScope.ScriptValue('upc_iron_production_value'), '(CFixedPoint)4')|v*]\nFrom [GetGoods('steel').GetTextIcon] [GetGoods('steel').GetName]: [Multiply_CFixedPoint(GetPlayer.MakeScope.ScriptValue('upc_steel_production_value'), '(CFixedPoint)4')|v*]\nFrom [GetGoods('lead').GetTextIcon] [GetGoods('lead').GetName]: [Multiply_CFixedPoint(GetPlayer.MakeScope.ScriptValue('upc_lead_production_value'), '(CFixedPoint)4')|v*]"
+
+ upc_topbar_element_total_production: "upc_topbar_element_total_production"
+ upc_topbar_element_total_production_icon: "@upc_production!"
+ upc_topbar_element_total_production_value: "[GetPlayer.MakeScope.Var('upc_lifetime_produced').GetValue|v*]"
+ upc_topbar_element_total_production_tooltip: "Our lifetime [Concept('concept_paperclips','$concept_paperclip$')] production is [GetPlayer.MakeScope.Var('upc_lifetime_produced').GetValue|v*]"
+ upc_topbar_element_total_production_source: "$upc_topbar_mod_source$"
+ upc_topbar_element_total_production_source_tooltip: "$upc_topbar_mod_source_tooltip$"

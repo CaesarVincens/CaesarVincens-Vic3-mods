@@ -1,0 +1,238 @@
+﻿je_upc_tracking = {
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds" #paperclip
+	group = je_group_objectives
+
+	scripted_progress_bar = upc_tracking_bar
+	should_be_pinned_by_default = yes
+	can_revolution_inherit = yes
+
+	scripted_button = upc_je_production_boost
+	scripted_button = upc_je_production_regular
+	modifiers_while_active = {
+		upc_je_basic_clip_production
+	}
+	immediate = {
+		set_variable = { name = upc_produced value = 0 }
+		set_variable = { name = upc_quota value = 0 }
+		set_variable = { name = upc_quota value = root.upc_set_monthly_quota_12 }
+		set_variable = { name = upc_months_remaining value = 60 }
+		set_variable = { name = upc_lifetime_produced value = 0 }
+		set_variable = {
+			name = upc_prediction
+			value = {
+				value = root.upc_clips_production_value
+				multiply = var:upc_months_remaining
+				multiply = 4
+			}
+		}
+		trigger_event = {
+			popup = yes
+			id = upc_events.01
+		}
+	}
+	invalid = {
+		hidden_trigger = {
+			has_variable = no_more_paperclips
+		}
+	}
+	on_invalid = {
+		hidden_effect = {
+			clean_up_paperclips = yes
+		}
+	}
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_upc_tracking_meeting_quota
+				trigger = {
+					upc_quintannual_quota_value <= { value = var:upc_produced add = var:upc_prediction }
+				}
+			}
+			triggered_desc = {
+				desc = je_upc_tracking_failing_quota
+				trigger = {
+					upc_quintannual_quota_value > { value = var:upc_produced add = var:upc_prediction }
+				}
+			}
+			triggered_desc = {
+				desc = je_upc_tracking_blank
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	custom_on_completion_header = je_upc_complete_header
+	on_complete = {
+		show_as_tooltip = {
+			scope:journal_entry = {
+				hidden_effect = {
+					remove_modifier = upc_quota_failed
+					remove_modifier = upc_quota_met
+				}
+				add_modifier = {
+					name = upc_quota_met
+					days = -1
+					multiplier = {
+						if = {
+							limit = { root.upc_quota_predicted_percent > 1 }
+							value = root.upc_quota_predicted_percent
+						}
+						else = { value = 1 }
+						#add = 1
+					}
+				}
+			}
+		}
+	}
+	#custom_on_fail_header = je_upc_fail_header
+	on_fail = {
+		show_as_tooltip = {
+			scope:journal_entry = {
+				hidden_effect = {
+					remove_modifier = upc_quota_failed
+					remove_modifier = upc_quota_met
+				}
+				add_modifier = {
+					name = upc_quota_failed
+					days = -1
+					multiplier = {
+						if = {
+							limit = { root.upc_quota_predicted_percent < 1 }
+							value = {
+								value = 1
+								subtract = root.upc_quota_predicted_percent
+							}
+							add = 1
+						}
+						else = { value = 1 }
+					}
+				}
+			}
+		}
+	}
+	on_weekly_pulse = {
+		effect = {
+			if = {
+				limit = { has_variable = upc_je_production_boost_var }
+				every_scope_building = {
+					limit = {
+						OR = {
+							is_building_type = building_tooling_workshops
+							is_building_type = building_iron_mine
+							is_building_type = building_steel_mills
+							is_building_type = building_lead_mine
+						}
+						NOT = { has_modifier = upc_je_production_boost_modifier_building }
+					}
+					add_modifier = {
+						name = upc_je_production_boost_modifier_building
+						days = -1
+					}
+				}
+			}
+			change_variable = {
+				name = upc_produced
+				add = root.upc_clips_production_value
+			}
+			change_variable = {
+				name = upc_lifetime_produced
+				add = root.upc_clips_production_value
+			}
+			set_variable = {
+				name = upc_prediction
+				value = {
+					value = root.upc_clips_production_value
+					multiply = var:upc_months_remaining
+					multiply = 4
+				}
+			}
+		}
+		events = {
+			upc_events.02
+			upc_events.03
+			upc_events.04
+			upc_events.05
+			upc_events.06
+			upc_events.07
+			upc_events.08
+			upc_events.11
+			upc_events.12
+			upc_events.13
+			upc_events.14
+			upc_events.15
+			upc_events.16
+		}
+	}
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = upc_months_remaining
+				subtract = 1
+			}
+			if = {
+				limit = {
+					var:upc_months_remaining <= 0
+				}
+				set_variable = { name = upc_months_remaining value = 60 }
+				if = {
+					limit = {
+						scope:journal_entry = {
+							"scripted_bar_progress(upc_tracking_bar)" >= 100
+						}
+					}
+					post_notification = upc_quota_met_notice
+					scope:journal_entry = {
+						hidden_effect = {
+							remove_modifier = upc_quota_failed
+							remove_modifier = upc_quota_met
+						}
+						add_modifier = {
+							name = upc_quota_met
+							days = -1
+							multiplier = root.upc_quota_predicted_percent
+						}
+					}
+					set_variable = { name = upc_quota value = upc_set_monthly_quota_12 }
+				}
+				else = {
+					if = {
+						limit = {
+							NOT = { has_variable = upc_failed_quota }
+						}
+						set_variable = upc_failed_quota
+					}
+					post_notification = upc_quota_failed_notice
+					scope:journal_entry = {
+						hidden_effect = {
+							remove_modifier = upc_quota_failed
+							remove_modifier = upc_quota_met
+						}
+						add_modifier = {
+							name = upc_quota_failed
+							days = -1
+							multiplier = {
+								value = {
+									value = 1
+									subtract = root.upc_quota_predicted_percent
+								}
+								add = 1
+							}
+						}
+					}
+					set_variable = { name = upc_quota value = upc_set_monthly_quota_10 }
+				}
+				scope:journal_entry = {
+					set_bar_progress = {
+						value = 0
+						name = upc_tracking_bar
+					}
+				}
+				set_variable = {
+					name = upc_produced
+					value = 0
+				}
+			}
+		}
+	}
+}

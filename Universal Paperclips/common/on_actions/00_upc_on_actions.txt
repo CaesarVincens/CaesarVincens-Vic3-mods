@@ -1,0 +1,49 @@
+﻿#Test?
+on_game_started = {
+	on_actions = {
+		on_upc_start
+	}
+}
+on_upc_start = {
+	effect = {
+		set_global_variable = upc_is_loaded
+	}
+}
+
+on_game_started_after_lobby = {
+	on_actions = {
+		on_upc_after_lobby
+	}
+}
+
+on_upc_after_lobby = {
+	effect = {
+		every_country = {
+			limit = { is_player = yes }
+			add_journal_entry = {
+				type = je_upc_tracking
+			}
+			add_com_topbar_element = {
+				element_name = upc_topbar_element_total_production
+			}
+			add_com_topbar_element = {
+				element_name = upc_topbar_element_quota
+			}
+			add_com_topbar_element = {
+				element_name = upc_topbar_element_production
+			}
+			add_to_variable_list = {
+				name = com_topbar_second_line
+				target = scope:upc_topbar_element_total_production
+			}
+			add_to_variable_list = {
+				name = com_topbar_second_line
+				target = scope:upc_topbar_element_quota
+			}
+			add_to_variable_list = {
+				name = com_topbar_second_line
+				target = scope:upc_topbar_element_production
+			}
+		}
+	}
+}

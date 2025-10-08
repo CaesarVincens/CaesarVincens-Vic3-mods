@@ -1,0 +1,114 @@
+﻿upc_je_production_boost = {
+	name = "upc_je_production_boost_title"
+	desc = "upc_je_production_boost_desc"
+
+	visible = { always = yes }
+	selected = {
+		has_variable = upc_je_production_boost_var
+	}
+	#Country scope
+	ai_chance = {
+		value = 0
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = upc_je_production_boost_trigger
+			NOT = {
+				has_variable = upc_je_production_boost_var
+			}
+		}
+	}
+
+	effect = {
+		set_variable = upc_je_production_boost_var
+		je:je_upc_tracking = {
+			remove_modifier = upc_je_basic_clip_production
+			add_modifier = {
+				name = upc_je_production_boost_modifier
+				days = -1
+			}
+		}
+		custom_tooltip = {
+			text = upc_je_production_boost_building
+			every_scope_building = {
+				limit = {
+					OR = {
+						is_building_type = building_tooling_workshops
+						is_building_type = building_iron_mine
+						is_building_type = building_steel_mills
+						is_building_type = building_lead_mine
+					}
+				}
+				add_modifier = {
+					name = upc_je_production_boost_modifier_building
+					days = -1
+				}
+			}
+		}
+		set_variable = {
+			name = upc_prediction
+			value = {
+				value = root.upc_clips_production_value
+				multiply = var:upc_months_remaining
+				multiply = 4
+			}
+		}
+	}
+}
+
+upc_je_production_regular = {
+	name = "upc_je_production_regular_title"
+	desc = "upc_je_production_regular_desc"
+
+	visible = { always = yes }
+	selected = {
+		NOT = { has_variable = upc_je_production_boost_var }
+	}
+	#Country scope
+	ai_chance = {
+		value = 0
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = upc_je_production_regular_trigger
+			has_variable = upc_je_production_boost_var
+		}
+	}
+
+	effect = {
+		remove_variable = upc_je_production_boost_var
+		set_variable = { name = upc_anti_cheese value = yes months = 6 }
+		je:je_upc_tracking = {
+			remove_modifier = upc_je_production_boost_modifier
+			add_modifier = {
+				name = upc_je_basic_clip_production
+				days = -1
+			}
+		}
+		custom_tooltip = {
+			text = upc_je_production_regular_building
+			subject = bt:building_tooling_workshops
+			every_scope_building = {
+				limit = {
+					OR = {
+						is_building_type = building_tooling_workshops
+						is_building_type = building_iron_mine
+						is_building_type = building_steel_mills
+						is_building_type = building_lead_mine
+					}
+				}
+				remove_modifier = upc_je_production_boost_modifier_building
+			}
+		}
+		set_variable = {
+			name = upc_prediction
+			value = {
+				value = root.upc_clips_production_value
+				multiply = var:upc_months_remaining
+				multiply = 4
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+﻿clean_up_paperclips = {
+	remove_variable = upc_lifetime_produced
+	remove_variable = upc_months_remaining
+	remove_variable = upc_prediction
+	remove_variable = upc_produced
+	remove_variable = upc_quota
+	remove_variable = upc_je_production_boost_var
+	every_scope_building = {
+		limit = {
+			OR = {
+				is_building_type = building_tooling_workshops
+				is_building_type = building_iron_mine
+				is_building_type = building_steel_mills
+				is_building_type = building_lead_mine
+			}
+		}
+		remove_modifier = upc_je_production_boost_modifier_building
+	}
+	remove_list_variable = {
+		name = com_topbar_second_line
+		target = scope:upc_topbar_element_total_production
+	}
+	remove_list_variable = {
+		name = com_topbar_second_line
+		target = scope:upc_topbar_element_quota
+	}
+	remove_list_variable = {
+		name = com_topbar_second_line
+		target = scope:upc_topbar_element_production
+	}
+}
+
+upc_milestone_effect = {
+	hidden_effect = {
+		if = {
+			limit = { has_modifier = upc_milestone_prestige_$NUM$ }
+			remove_modifier = upc_milestone_prestige_$NUM$
+		}
+	}
+	add_modifier = {
+		name = upc_milestone_prestige_$NUM$
+		days = normal_modifier_time
+		is_decaying = yes
+		multiplier = $MULT$
+	}
+}

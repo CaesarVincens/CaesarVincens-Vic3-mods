@@ -1,0 +1,476 @@
+﻿namespace = upc_events
+
+upc_events.01 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.01.t
+	desc = upc_events.01.d
+	flavor = upc_events.01.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = { }
+
+	cooldown = { days = very_long_modifier_time }
+
+	immediate = { }
+
+	option = {
+		name = upc_events.01.a
+		default_option = yes
+	}
+
+	option = {
+		name = upc_events.01.b
+		custom_tooltip = upc_dismiss_je
+		set_variable = no_more_paperclips
+	}
+
+}
+
+upc_events.02 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.02.t
+	desc = upc_events.02.d
+	flavor = upc_events.02.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		var:upc_lifetime_produced >= 10000
+		NOT = { has_variable = upc_10k }
+	}
+
+	immediate = { set_variable = upc_10k }
+
+	option = {
+		name = upc_events.02.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 1
+			MULT = 5
+		}
+	}
+
+}
+
+upc_events.03 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.03.t
+	desc = upc_events.03.d
+	flavor = upc_events.03.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		var:upc_lifetime_produced >= 100000
+		NOT = { has_variable = upc_100k }
+	}
+
+	immediate = { set_variable = upc_100k }
+
+	option = {
+		name = upc_events.03.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 1
+			MULT = 10
+		}
+	}
+
+}
+
+upc_events.04 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.04.t
+	desc = upc_events.04.d
+	flavor = upc_events.04.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		var:upc_lifetime_produced >= 1000000
+		NOT = { has_variable = upc_1M }
+	}
+
+	immediate = { set_variable = upc_1M }
+
+	option = {
+		name = upc_events.04.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 1
+			MULT = 15
+		}
+	}
+
+}
+
+upc_events.05 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.05.t
+	desc = upc_events.05.d
+	flavor = upc_events.05.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		var:upc_lifetime_produced >= 10000000
+		NOT = { has_variable = upc_10M }
+	}
+
+	immediate = { set_variable = upc_10M }
+
+	option = {
+		name = upc_events.05.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 1
+			MULT = 20
+		}
+	}
+
+}
+
+upc_events.06 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.06.t
+	desc = upc_events.06.d
+	flavor = upc_events.06.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		var:upc_lifetime_produced >= 100000000
+		NOT = { has_variable = upc_100M }
+	}
+
+	immediate = { set_variable = upc_100M }
+
+	option = {
+		name = upc_events.06.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 1
+			MULT = 25
+		}
+	}
+
+}
+
+upc_events.07 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.07.t
+	desc = upc_events.07.d
+	flavor = upc_events.07.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		var:upc_lifetime_produced >= 1000000000
+		NOT = { has_variable = upc_1B }
+	}
+
+	immediate = { set_variable = upc_1B }
+	option = {
+		name = upc_events.07.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 1
+			MULT = 30
+		}
+	}
+}
+
+upc_events.08 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.08.t
+	desc = upc_events.08.d
+	flavor = upc_events.08.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		var:upc_lifetime_produced >= 1000000000000
+		NOT = { has_variable = upc_1T }
+	}
+
+	immediate = { set_variable = upc_1T }
+	option = {
+		name = upc_events.08.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 1
+			MULT = 100
+		}
+	}
+}
+
+upc_events.11 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.11.t
+	desc = upc_events.11.d
+	flavor = upc_events.11.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		upc_clips_production_value >= 10000
+		NOT = { has_variable = upc_10k_weekly }
+	}
+
+	immediate = { set_variable = upc_10k_weekly }
+	option = {
+		name = upc_events.11.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 2
+			MULT = 5
+		}
+	}
+}
+
+upc_events.12 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.12.t
+	desc = upc_events.12.d
+	flavor = upc_events.12.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		upc_clips_production_value >= 100000
+		NOT = { has_variable = upc_100k_weekly }
+	}
+
+	immediate = { set_variable = upc_100k_weekly }
+	option = {
+		name = upc_events.12.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 2
+			MULT = 10
+		}
+	}
+}
+
+upc_events.13 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.13.t
+	desc = upc_events.13.d
+	flavor = upc_events.13.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		upc_clips_production_value >= 1000000
+		NOT = { has_variable = upc_1M_weekly }
+	}
+
+	immediate = { set_variable = upc_1M_weekly }
+	option = {
+		name = upc_events.13.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 2
+			MULT = 15
+		}
+	}
+}
+
+upc_events.14 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.14.t
+	desc = upc_events.14.d
+	flavor = upc_events.14.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		upc_clips_production_value >= 10000000
+		NOT = { has_variable = upc_10M_weekly }
+	}
+
+	immediate = { set_variable = upc_10M_weekly }
+	option = {
+		name = upc_events.14.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 2
+			MULT = 15
+		}
+	}
+}
+
+upc_events.15 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.15.t
+	desc = upc_events.15.d
+	flavor = upc_events.15.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		upc_clips_production_value >= 100000000
+		NOT = { has_variable = upc_100M_weekly }
+	}
+
+	immediate = { set_variable = upc_100M_weekly }
+	option = {
+		name = upc_events.15.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 2
+			MULT = 20
+		}
+	}
+}
+
+upc_events.16 = {
+	type = country_event
+	placement = root
+
+	title = upc_events.16.t
+	desc = upc_events.16.d
+	flavor = upc_events.16.f
+
+	icon = "gfx/interface/icons/event_icons/event_three_paperclips.dds"
+
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+	duration = 3
+
+	trigger = {
+		upc_clips_production_value >= 1000000000
+		NOT = { has_variable = upc_1B_weekly }
+	}
+
+	immediate = { set_variable = upc_1B_weekly }
+	option = {
+		name = upc_events.16.a
+		default_option = yes
+		upc_milestone_effect = {
+			NUM = 2
+			MULT = 25
+		}
+	}
+}

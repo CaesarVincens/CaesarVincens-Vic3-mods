@@ -1,0 +1,17 @@
+﻿USA_clips = {
+	@usa_canton_width = 0.5
+	@usa_canton_height = @[ 1 / 13 * 7 ]
+
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+
+	colored_emblem = {
+		texture = "ce_stripes_13.dds"
+		color1 = "red"
+		color2 = "red"
+	}
+    sub = {
+        parent = "upc_sub_USA_canton_24_clips"
+        instance = { scale = { @usa_canton_width @usa_canton_height }  } # top left
+    }
+}

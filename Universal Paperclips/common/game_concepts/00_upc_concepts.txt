@@ -1,0 +1,4 @@
+﻿concept_paperclips = {
+	texture = "gfx/interface/icons/texticons/texticon_single_paperclip.dds"
+	is_loading_tip = yes
+}

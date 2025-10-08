@@ -1,0 +1,51 @@
+﻿upc_sub_USA_canton_24_clips = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "white"
+
+	@usa_star_scale_24 = 0.2
+
+	textured_emblem = {
+		texture = "te_paperclip_star_05.dds"
+
+		# 24 stars
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 1 ] @[ 1 / 5 * 1 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 2 ] @[ 1 / 5 * 1 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 3 ] @[ 1 / 5 * 1 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 4 ] @[ 1 / 5 * 1 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 5 ] @[ 1 / 5 * 1 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 6 ] @[ 1 / 5 * 1 ] } }
+
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 1 ] @[ 1 / 5 * 2 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 2 ] @[ 1 / 5 * 2 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 3 ] @[ 1 / 5 * 2 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 4 ] @[ 1 / 5 * 2 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 5 ] @[ 1 / 5 * 2 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 6 ] @[ 1 / 5 * 2 ] } }
+
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 1 ] @[ 1 / 5 * 3 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 2 ] @[ 1 / 5 * 3 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 3 ] @[ 1 / 5 * 3 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 4 ] @[ 1 / 5 * 3 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 5 ] @[ 1 / 5 * 3 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 6 ] @[ 1 / 5 * 3 ] } }
+
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 1 ] @[ 1 / 5 * 4 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 2 ] @[ 1 / 5 * 4 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 3 ] @[ 1 / 5 * 4 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 4 ] @[ 1 / 5 * 4 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 5 ] @[ 1 / 5 * 4 ] } }
+		instance = { scale = { @usa_star_scale_24 @usa_star_scale_24 } position = { @[ 1 / 7 * 6 ] @[ 1 / 5 * 4 ] } }
+	}
+}
+
+sub_USA_canton_clip_star = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "white"
+
+	textured_emblem = {
+		texture = "te_paperclip_star_05.dds"
+		instance = { scale = { 0.9 0.9 } position = { 0.5 0.525 } }
+	}
+}

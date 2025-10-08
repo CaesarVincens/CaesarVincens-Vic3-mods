@@ -1,0 +1,15 @@
+﻿namespace = upc_error_suppression
+
+upc_error_suppression.1 = {
+	hidden = yes
+	orphan = yes
+	trigger = {
+		exists = global_var:upc_is_loaded
+		has_global_variable = upc_is_loaded
+	}
+	immediate = {
+		fix_variable_error = { variable = upc_topbar_element_quota }
+		fix_variable_error = { variable = upc_topbar_element_production }
+		fix_variable_error = { variable = upc_topbar_element_total_production }
+	}
+}
