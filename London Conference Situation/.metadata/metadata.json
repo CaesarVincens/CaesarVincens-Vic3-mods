@@ -1,0 +1,22 @@
+{
+  "name" : "London Conference Situation",
+  "id" : "",
+  "version" : "0.1.0",
+  "game_id" : "victoria3",
+  "picture" : "thumbnail.png",
+  "supported_game_version" : "1.10.*",
+  "short_description" : "Reworks the London Conference journal to be a Community Framework Mod Situation",
+  "tags" : [],
+  "relationships" : [
+    {
+      "rel_type" : "dependency",
+      "id" : "com.github.Victoria-3-Modding-Co-op.Community-Mod-Framework",
+      "display_name" : "Community Mod Framework",
+      "resource_type" : "mod",
+      "version" : "1.*"
+    }
+  ],
+  "game_custom_data" : {
+    "multiplayer_synchronized" : true
+  }
+}

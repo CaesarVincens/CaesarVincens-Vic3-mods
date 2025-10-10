@@ -1,0 +1,10 @@
+﻿on_game_started = {
+	on_actions = {
+		on_lcs_start
+	}
+}
+on_lcs_start = {
+	effect = {
+		set_global_variable = lcs_is_loaded
+	}
+}
