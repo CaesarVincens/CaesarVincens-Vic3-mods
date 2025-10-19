@@ -1,0 +1,17 @@
+﻿macro = {
+    description = "Set trigger checkbox"
+    definition = "ComTrigger(Boolean)"
+    replace_with = "SelectLocalization(Boolean,'com_green_checkmark_box','com_simple_box')"
+}
+
+macro = {
+    description = "Check if global var is set"
+    definition = "GlobalVarIsSet(Var)"
+    replace_with = "GetGlobalVariable(Var).IsSet"
+}
+
+macro = {
+    description = "Set trigger checkbox"
+    definition = "Tester(Boolean)"
+    replace_with = "SelectLocalization(Boolean,'yes','no')"
+}

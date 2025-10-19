@@ -4,7 +4,7 @@
   "version" : "0.1.0",
   "game_id" : "victoria3",
   "picture" : "thumbnail.png",
-  "supported_game_version" : "1.10.*",
+  "supported_game_version" : "1.11.*",
   "short_description" : "Reworks the London Conference journal to be a Community Framework Mod Situation",
   "tags" : [],
   "relationships" : [

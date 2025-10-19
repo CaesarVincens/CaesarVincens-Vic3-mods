@@ -23,38 +23,38 @@
 			situation_id = lcs_je_conference_of_london
 			icon = lcs_icon_london_conference
 
-			side_leader_country_left = c:BEL
-			side_name_left = lcs_pro_belgium
-			side_desc_left = lcs_pro_belgium_desc
+			side_leader_country_right = c:BEL
+			side_name_right = lcs_pro_belgium
+			side_desc_right = lcs_pro_belgium_desc
 
-			side_leader_country_right = c:NET
-			side_name_right = lcs_pro_netherlands
-			side_desc_right = lcs_pro_netherlands_desc
+			side_leader_country_left = c:NET
+			side_name_left = lcs_pro_netherlands
+			side_desc_left = lcs_pro_netherlands_desc
 		}
 		create_com_situation_faction = {
-			side = left
+			side = right
 			name = lcs_pro_belgian
 			desc = lcs_pro_belgian_desc
 		}
 		create_com_situation_faction = {
-			side = right
+			side = left
 			name = lcs_pro_dutch
 			desc = lcs_pro_dutch_desc
-		}
-		create_com_situation_faction = {
-			side = right
-			name = lcs_twenty_four
-			desc = lcs_twenty_four_desc
-		}
-		create_com_situation_faction = {
-			side = left
-			name = lcs_alternate
-			desc = lcs_alternate_desc
 		}
 		create_com_situation_faction = {
 			side = neutral
 			name = lcs_participants
 			desc = lcs_participants_desc
+		}
+		create_com_situation_faction = {
+			side = neutral
+			name = lcs_twenty_four
+			desc = lcs_twenty_four_desc
+		}
+		create_com_situation_faction = {
+			side = neutral
+			name = lcs_alternate
+			desc = lcs_alternate_desc
 		}
 		if = {
 			limit = {
@@ -135,18 +135,30 @@
 		set_com_situation_header = {
 			text = lcs_vote_header_start
 		}
+		set_com_situation_side_victory_condition_text = {
+			side = left
+			victory_condition = lcs_net_victory
+		}
+		set_com_situation_side_victory_condition_text = {
+			side = right
+			victory_condition = lcs_bel_victory
+		}
+		set_com_situation_side_victory_condition_text = {
+			side = neutral
+			victory_condition = lcs_other_end
+		}
 	}
 	#
-	custom_completion_header = lcs_bel_victory
-	custom_on_completion_header = lcs_bel_victory
+	#custom_completion_header = lcs_net_victory
+	#custom_on_completion_header = lcs_on_net_victory
 	complete = {
-		custom_tooltip = {
-			text = je_conference_of_london_tt_1
-			has_global_variable = london_treaty_has_concluded_global_var
-		}
 		custom_tooltip = {
 			text = je_conference_of_london_tt_2
 			has_global_variable = london_treaty_signed_bel_global_var
+		}
+		custom_tooltip = {
+			text = je_conference_of_london_tt_1
+			has_global_variable = london_treaty_has_concluded_global_var
 		}
 		custom_tooltip = {
 			text = je_conference_of_london_tt_4
@@ -156,12 +168,24 @@
 
 	on_complete = {
 		trigger_event = { id = treaty_of_london_events.4 popup = yes }
-		end_com_situation = {
-			situation_id = lcs_je_conference_of_london
+		if = {
+			limit = {
+				c:NET ?= root
+			}
+			end_com_situation = {
+				situation_id = lcs_je_conference_of_london
+			}
+		}
+		else = {
+			show_as_tooltip = {
+				end_com_situation = {
+					situation_id = lcs_je_conference_of_london
+				}
+			}
 		}
 	}
-	custom_failure_header = lcs_net_victory
-	custom_on_failure_header = lcs_net_victory
+	#custom_failure_header = lcs_bel_victory
+	#custom_on_failure_header = lcs_on_bel_victory
 	fail = {
 		OR = {
 			custom_tooltip = {
@@ -173,7 +197,7 @@
 			}
 			custom_tooltip = {
 				text = je_conference_of_london_tt_5
-				c:BEL = {
+				c:BEL ?= {
 					has_war_with = c:NET
 				}
 			}
@@ -182,8 +206,20 @@
 
 	on_fail = {
 		trigger_event = { id = treaty_of_london_events.5 popup = yes }
-		end_com_situation = {
-			situation_id = lcs_je_conference_of_london
+		if = {
+			limit = {
+				c:NET ?= root
+			}
+			end_com_situation = {
+				situation_id = lcs_je_conference_of_london
+			}
+		}
+		else = {
+			show_as_tooltip = {
+				end_com_situation = {
+					situation_id = lcs_je_conference_of_london
+				}
+			}
 		}
 	}
 
@@ -252,10 +288,7 @@
 						random_list = {
 							1 = {
 								set_variable = favour_belgium_button_var
-								change_global_variable = {
-									name = je_conference_of_london_proposal_1
-									add = THIS.prestige
-								}
+								favour_belgium = yes
 								scope:belgium_scope = {
 									change_relations = { country = root value = 20 }
 									create_diplomatic_catalyst = {
@@ -273,10 +306,7 @@
 							}
 							1 = {
 								set_variable = favour_netherlands_button_var
-								change_global_variable = {
-									name = je_conference_of_london_proposal_2
-									add = THIS.prestige
-								}
+								favour_netherlands = yes
 								scope:netherlands_scope = {
 									change_relations = { country = root value = 20 }
 									create_diplomatic_catalyst = {
@@ -294,10 +324,7 @@
 							}
 							1 = {
 								set_variable = partition_compromise_button_var
-								change_global_variable = {
-									name = je_conference_of_london_proposal_3
-									add = THIS.prestige
-								}
+								partition_compromise = yes
 								every_country = {
 									limit = {
 										any_primary_culture = {
@@ -319,10 +346,7 @@
 							}
 							1 = {
 								set_variable = luxembourg_compromise_button_var
-								change_global_variable = {
-									name = je_conference_of_london_proposal_4
-									add = THIS.prestige
-								}
+								luxembourg_compromise = yes
 							}
 						}
 					}
@@ -681,7 +705,20 @@
 	}
 	on_yearly_pulse = {
 	}
-
+	invalid = {
+		NAND = {
+			c:BEL = { is_country_alive = yes }
+			c:NET = { is_country_alive = yes }
+		}
+	}
+	on_invalid = {
+		ordered_com_situation_countries = {
+			order_by = prestige
+			end_com_situation = {
+				situation_id = lcs_je_conference_of_london
+			}
+		}
+	}
 	weight = 100
 
 	should_be_pinned_by_default = yes

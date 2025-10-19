@@ -57,7 +57,7 @@ treaty_of_london_events.1 = {
 			}
 			every_country = {
 				limit = {
-					country_rank >= rank_value:major_power
+					country_rank >= rank_value:great_power
 					NOR = {
 						root ?= this
 						c:BEL ?= this
@@ -84,7 +84,7 @@ treaty_of_london_events.1 = {
 		}
 		every_country = {
 			limit = {
-				country_rank >= rank_value:major_power
+				country_rank >= rank_value:great_power
 				NOT = { this = root }
 				country_is_in_europe = yes
 			}
@@ -152,7 +152,7 @@ treaty_of_london_events.2 = {
 		custom_tooltip = treaty_of_london_explanation_tt
 		every_country = {
 			limit = {
-				country_rank >= rank_value:major_power
+				country_rank >= rank_value:great_power
 				NOT = { this = root }
 				country_is_in_europe = yes
 			}
@@ -175,7 +175,7 @@ treaty_of_london_events.2 = {
 		}
 		every_country = {
 			limit = {
-				country_rank >= rank_value:major_power
+				country_rank >= rank_value:great_power
 				NOT = { this = root }
 				country_is_in_europe = yes
 			}

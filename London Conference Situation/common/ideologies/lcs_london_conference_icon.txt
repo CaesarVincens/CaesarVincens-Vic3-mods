@@ -1,6 +1,6 @@
 ﻿lcs_icon_london_conference = {
 	# This is the icon used for the example button
-	icon = "gfx/interface/situation/com_rise_of_communism.dds"
+	icon = "gfx/interface/situation/lcs_london_conference.dds"
 
 	# Never allow button ideologies to be shown
 	show_in_list = no

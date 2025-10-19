@@ -1,0 +1,75 @@
+﻿
+# Change a sides victory condition text
+# This effect has to be run inside a scope where 'scope:com_situation' is available!
+# Parameters:
+# - side = either 'left' or 'right'
+# - name = localization key for the new victory condition text
+set_com_situation_side_victory_condition_text = {
+    hidden_effect = {
+        if = {
+            limit = {
+                NOT = {
+                    exists = scope:com_situation
+                }
+            }
+            error_log = error_no_situation_scope
+        }
+        else = {
+            fix_variable_error = { variable = $victory_condition$ }
+            fix_variable_error = { variable = com_victory_condition }
+            scope:com_situation = {
+                var:com_side_$side$ = {
+                    set_variable = {
+                        name = com_victory_condition
+                        value = flag:$victory_condition$
+                    }
+                }
+            }
+        }
+    }
+}
+
+favour_belgium = {
+	add_com_situation_faction_country = {
+		side = right
+		name = lcs_pro_belgian
+		country = ROOT
+	}
+	change_global_variable = {
+		name = je_conference_of_london_proposal_1
+		add = ROOT.prestige
+	}
+}
+favour_netherlands = {
+	add_com_situation_faction_country = {
+		side = left
+		name = lcs_pro_dutch
+		country = ROOT
+	}
+	change_global_variable = {
+		name = je_conference_of_london_proposal_2
+		add = ROOT.prestige
+	}
+}
+partition_compromise = {
+	add_com_situation_faction_country = {
+		side = neutral
+		name = lcs_twenty_four
+		country = ROOT
+	}
+	change_global_variable = {
+		name = je_conference_of_london_proposal_3
+		add = ROOT.prestige
+	}
+}
+luxembourg_compromise = {
+	add_com_situation_faction_country = {
+		side = neutral
+		name = lcs_alternate
+		country = ROOT
+	}
+	change_global_variable = {
+		name = je_conference_of_london_proposal_4
+		add = ROOT.prestige
+	}
+}

@@ -26,13 +26,13 @@
 	}
 
 	effect = {
-		add_com_situation_faction_country = {
-			side = left
-			name = lcs_pro_belgian
-			country = root
-		}
 		custom_tooltip = we_chose_this_london_treaty_tt
 		set_variable = favour_belgium_button_var
+		add_com_situation_faction_country = {
+			side = right
+			name = lcs_pro_belgian
+			country = ROOT
+		}
 		change_global_variable = {
 			name = je_conference_of_london_proposal_1
 			add = ROOT.prestige
@@ -105,13 +105,13 @@ favour_netherlands_button = {
 	}
 
 	effect = {
-		add_com_situation_faction_country = {
-			side = right
-			name = lcs_pro_dutch
-			country = root
-		}
 		custom_tooltip = we_chose_this_london_treaty_tt
 		set_variable = favour_netherlands_button_var
+		add_com_situation_faction_country = {
+			side = left
+			name = lcs_pro_dutch
+			country = ROOT
+		}
 		change_global_variable = {
 			name = je_conference_of_london_proposal_2
 			add = ROOT.prestige
@@ -184,13 +184,13 @@ partition_compromise_button = {
 	}
 
 	effect = {
-		add_com_situation_faction_country = {
-			side = right
-			name = lcs_twenty_four
-			country = root
-		}
 		custom_tooltip = we_chose_this_london_treaty_tt
 		set_variable = partition_compromise_button_var
+		add_com_situation_faction_country = {
+			side = neutral
+			name = lcs_twenty_four
+			country = ROOT
+		}
 		change_global_variable = {
 			name = je_conference_of_london_proposal_3
 			add = ROOT.prestige
@@ -271,13 +271,13 @@ luxembourg_compromise_button = {
 	}
 
 	effect = {
-		add_com_situation_faction_country = {
-			side = left
-			name = lcs_alternate
-			country = root
-		}
 		custom_tooltip = we_chose_this_london_treaty_tt
 		set_variable = luxembourg_compromise_button_var
+		add_com_situation_faction_country = {
+			side = neutral
+			name = lcs_alternate
+			country = ROOT
+		}
 		change_global_variable = {
 			name = je_conference_of_london_proposal_4
 			add = ROOT.prestige
