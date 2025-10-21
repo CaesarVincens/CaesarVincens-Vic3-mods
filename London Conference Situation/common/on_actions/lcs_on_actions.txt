@@ -6,11 +6,5 @@
 on_lcs_start = {
 	effect = {
 		set_global_variable = lcs_is_loaded
-		debug_log = "Here we go"
-		random_country = {
-			trigger_event = {
-				id = lcs_error_suppression.0002
-			}
-		}
 	}
 }
