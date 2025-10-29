@@ -1,0 +1,12 @@
+﻿kjs_icon_krakatoa = {
+	# This is the icon used for the example button
+	icon = "gfx/interface/situation/kjs_icon_krakatoa.dds"
+
+	# Never allow button ideologies to be shown
+	show_in_list = no
+
+	priority = 0
+
+	# Never allow button ideologies to be triggered
+	character_ideology = no
+}
