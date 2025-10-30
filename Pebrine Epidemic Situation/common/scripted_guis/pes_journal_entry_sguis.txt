@@ -1,0 +1,19 @@
+﻿je_silkworm_diseases_states_sgui = {
+	scope = country
+
+	effect = {
+		if = {
+			limit = {
+				has_variable_list = pebrine_states
+			}
+			every_in_list = {
+				variable = pebrine_states
+				b:building_silk_plantation ?= { save_scope_as = silk_plantation }
+				custom_tooltip = "PEBRINE_LIST_ENTRY" # for each print a line
+			}
+		}
+		else = {
+			custom_tooltip = "PEBRINE_LIST_EMPTY_STATE" # empty state
+		}
+	}
+}

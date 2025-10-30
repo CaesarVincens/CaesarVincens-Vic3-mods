@@ -1,0 +1,9 @@
+﻿namespace = pes_error_suppression
+
+pes_error_suppression.0001 = {
+  hidden = yes
+  orphan = yes
+  trigger = {
+    exists = global_var:pes_is_loaded
+  }
+}

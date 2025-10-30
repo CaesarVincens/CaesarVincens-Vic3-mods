@@ -1,0 +1,82 @@
+﻿l_english:
+ je_silkworm_diseases: "The Pébrine Epidemic"
+ je_silkworm_diseases_goal: "[ROOT.GetCountry.GetName] has had a [GetDecreeType('decree_encourage_agricultural_industry').GetName] decree active in at least 75% of states affected by #BOLD pébrine#! for one year after discovering a solution\n\nA solution to the epidemic can be received through researching #BOLD pasteurization#!, or receiving it from another nation that has discovered the solution."
+ je_silkworm_diseases_reason: "The [ROOT.GetCountry.GetAdjective] silk industry has been afflicted on a large scale by #BOLD pébrine#!, an epidemic which threatens to decimate our silkworm farms if left unchecked.\n$PEBRINE_LIST_HEADER$$PEBRINE_LIST_CONTENT$\n$PEBRINE_LIST_AFTER$"
+ 
+ pebrine_cure_tt: "We have learned how to resolve the #BOLD pébrine#! epidemic, either from domestic research or from another nation"
+ pebrine_cure_acquire_tt: "A method of mitigating the #BOLD pébrine#! epidemic through the [GetDecreeType('decree_encourage_agricultural_industry').GetName] decree has been discovered."
+ pebrine_je_fail_tt: "The [SCOPE.sCountry('pebrine_country_scope').GetAdjective] silk industry has been crippled for the forseeable future."
+
+ modifier_pebrine_state_modifier: "Pébrine Epidemic"
+ modifier_pebrine_research_funds: "Funding Silkworm Disease Research"
+ modifier_art_silk_research_funds: "Synthetic Silk Research"
+ modifier_art_silk_research: "Industrialists Patronized"
+ modifier_art_silk_refused: "Synthetic Silk Research Refused"
+ modifier_landowner_bailout_funds: "Compensation for Pébrine Losses"
+ modifier_landowner_bailout_funds_country: "Landowners Compensated"
+ modifier_landowners_not_bailed_out: "Pébrine Epidemic Uncompensated"
+ modifier_worker_bailout: "Relief for Silkworm Farmers"
+ modifier_workers_not_bailed_out: "Silkworm Farmers Uncompensated"
+ modifier_intelligentsia_pebrine_credit: "Triumph of Science"
+ modifier_silk_grand_reopening: "Silk Industry Reactivated"
+
+ modifier_pioneered_pebrine_cure: "Pioneered Pébrine Mitigation"
+
+ notification_pebrine_spread_notification_name: "Pébrine epidemic spreads to [SCOPE.sCountry('pebrine_country_scope').GetName]."
+ notification_pebrine_spread_notification_desc: "Silkworm farms in [SCOPE.sCountry('pebrine_country_scope').GetName] have begun to be affected by the pébrine epidemic."
+ notification_pebrine_spread_notification_tooltip: "Silkworm farms in [SCOPE.sCountry('pebrine_country_scope').GetName] begin to suffer from the pébrine epidemic"
+
+ silkworm_diseases.1.t: "The Pébrine Epidemic"
+ silkworm_diseases.1.d: "The [SCOPE.sBuilding('pebrine_building').GetName] in [SCOPE.sState('pebrine_state').GetStateRegion.GetName] have begun experiencing an epidemic of pébrine, a lethal silkworm disease. With the disease decimating entire silkworm farms, this outbreak puts the entire [ROOT.GetCountry.GetAdjective] silk industry at risk."
+ silkworm_diseases.1.f: ""Yes, every single one of them from the latest batch. Covered in brown spots, and dying one by one. There's not a strand of silk among them."\n\nThe same report had begun to trickle in from nearly every farm in [SCOPE.sState('pebrine_state').GetStateRegion.GetNameNoFormatting]. Thousands upon thousands of silkworms afflicted. Shrunken, lethargic, poor development - and not a wisp of vital, priceless silk spun."
+ silkworm_diseases.1.a: "We must act at once."
+
+ silkworm_diseases.2.t: "Pébrine Outbreak in [SCOPE.sState('pebrine_state').GetStateRegion.GetName]"
+ silkworm_diseases.2.d: "The ongoing pébrine outbreak has spread to the [SCOPE.sBuilding('pebrine_building').GetName] in [SCOPE.sState('pebrine_state').GetStateRegion.GetName]. The rapid spread of the disease through [ROOT.GetCountry.GetAdjective] silkworm farms is presenting more and more danger to the silk industry."
+ silkworm_diseases.2.f: "The first round of eggs that had hatched this week had a slightly elevated rate of mortality, which had partially inoculated those charged with watching over their invertebrate flock.\n\nIt had not, however, prepared them for the next one. Where before high-grade silk was spun, now withered, brown-spotted larvae struggled in their cells, on an inevitable track to eternal stillness."
+ silkworm_diseases.2.a: "Invest further into a potential solution."
+ silkworm_diseases.2.b: "The disease will burn itself out in time."
+
+ silkworm_diseases.3.t: "Pébrine Outbreak in [SCOPE.sState('pebrine_state').GetStateRegion.GetName]"
+ silkworm_diseases.3.d: "The outbreak of the silkworm disease pébrine in [SCOPE.sCountry('pebrine_origin').GetName] has spread to [ROOT.GetCountry.GetAdjective] soil. The [SCOPE.sBuilding('pebrine_building').GetName] in [SCOPE.sState('pebrine_state').GetStateRegion.GetName] have begun experiencing mass deaths amongst their silkworms."
+ silkworm_diseases.3.f: ""Yes, every single one of them from the latest batch. Covered in brown spots, and dying one by one. There's not a strand of silk among them."\n\nThe same report had begun to trickle in from nearly every farm in [SCOPE.sState('pebrine_state').GetStateRegion.GetNameNoFormatting]. Thousands upon thousands of silkworms afflicted. Shrunken, lethargic, poor development - and not a wisp of vital, priceless silk spun."
+ silkworm_diseases.3.a: "We must act at once."
+ silkworm_diseases.3.b: "Damn this [SCOPE.sCountry('pebrine_origin').GetAdjective] negligence!"
+
+ silkworm_diseases.4.t: "[SCOPE.gsInterestGroup('landowners_scope').GetName] Request Reimbursement"
+ silkworm_diseases.4.d: "The [SCOPE.gsInterestGroup('landowners_scope').GetName] which own the [SCOPE.sBuilding('pebrine_building').GetName] in [SCOPE.sState('pebrine_state').GetStateRegion.GetName] have approached the government, requesting reimbursement for the losses of profit they have suffered due to the pébrine epidemic."
+ silkworm_diseases.4.f: ""For much time, now, we have had to expend great sums of money and labor ensuring the successes of our endeavors, only for them to be afflicted, through no fault of any man, by a malady which threatens the very foundations of [SCOPE.sState('pebrine_state').GetStateRegion.GetNameNoFormatting]'s natural environment. To fail to act in this time would be singularly catastrophic to the future of the common welfare...""
+ silkworm_diseases.4.a: "Their industries are vital to our nation."
+ silkworm_diseases.4.b: "We do not reward negligence."
+
+ silkworm_diseases.5.t: "The Synthetic Solution"
+ silkworm_diseases.5.d: "A group representing the [SCOPE.gsInterestGroup('industrialists_scope').GetName] has requested state investment in developing a process to create synthetic silk, as an alternative to the pébrine-wracked silkworm industry."
+ silkworm_diseases.5.f: ""...and in the case that the cause for this malady is not found before our entire industry is upended? I ask you to, at least, consider it."\n\n"One day, we will be able to produce whatever we wish from a chemical still - and we should not abandon the opportunity to begin that course with all due haste.""
+ silkworm_diseases.5.a: "A worthy investment in this time of crisis."
+ silkworm_diseases.5.b: "We will not threaten our silk industry further."
+
+ silkworm_diseases.6.t: "Aid for Silkworm Farmers"
+ silkworm_diseases.6.d: "The [GetPopType('laborers').GetName] of the [SCOPE.sBuilding('pebrine_building').GetName] in [SCOPE.sState('pebrine_state').GetStateRegion.GetName] have been affected significantly by the loss of their silkworms to pébrine. They have petitioned the government for financial assistance to replace lost wages."
+ silkworm_diseases.6.f: ""Man becomes great exactly in the degree in which he works for the welfare of his fellow-men."\n\n— Mahatma Gandhi"
+ silkworm_diseases.6.a: "Who are we to deny them aid?"
+ silkworm_diseases.6.b: "They can find alternative employment soon enough."
+
+ silkworm_diseases.7.t: "The Root of the Problem"
+ silkworm_diseases.7.d: "Following research into the nature of pébrine, we have successfully discovered both the fungus that is the cause of the disease, and a method to prevent it from spreading through silkworm farms. We are now capable of applying the discovered methods to clear our farms of the infection."
+ silkworm_diseases.7.f: ""...it is created there again by the bad seeds that are prepared there or that are imported there, and the day when we raise, in a locality of great culture, only seeds deprived of corpuscles, almost all the generations there will be guaranteed against pébrine and will become, not to mention consider that this disease, clear to reproduce."\n\n— Louis Pasteur"
+ silkworm_diseases.7.a: "We are once more at the fore of world science."
+ silkworm_diseases.7.b: "Share the cure with other affected nations."
+
+ pebrine_foreign_aid_tt: "All nations affected with #bold pébrine#! will receive the means to resolve the epidemic, in return for increased [concept_relations] and the possibility of owed [Concept('concept_obligation', '$concept_obligations$')]"
+
+ silkworm_diseases.8.t: "[SCOPE.sCountry('cure_sponsor_scope').GetName] Shares Pébrine Solution"
+ silkworm_diseases.8.d: "After discovering a method of reliably separating out pébrine-infected silkworm eggs, [SCOPE.sCountry('cure_sponsor_scope').GetName] has publicized the process internationally. By following the steps outlined in the released papers, we are now capable of replicating the [SCOPE.sCountry('cure_sponsor_scope').GetAdjectiveNoFormatting] successes in the field."
+ silkworm_diseases.8.f: ""From 4 to 6 o'clock in the evening, all the couples are arranged separately on the small cloths, then immediately afterwards they are discarding throwing the males, without worrying about their more or less corpuscular state. After the females have laid eggs, they are each locked up in a corner of their linen with the aid of a pin, preferably passing it through the wings, so that the moth cannot travel."\n\n— Louis Pasteur"
+ silkworm_diseases.8.a: "Send their scientists our thanks."
+ silkworm_diseases.8.b: "We will not become obligated to them."
+
+ silkworm_diseases.9.t: "The End of the Pébrine Epidemic"
+ silkworm_diseases.9.d: "With diligent effort on the part of both our scientists and the silkworm farmers who applied their solution, our silk industry has recovered from the pébrine epidemic affecting it. Our new knowledge of the cause of the disease will benefit us for many years to come."
+ silkworm_diseases.9.f: "Finally, the cells were filled once again with cocoons, the worms within unwittingly undergoing the metamorphosis that would soon be cut short by a bath of boiling water. A worker passed between the racks of wooden cells, the shadow of stress almost removed from his brow.\n\nHis list of tasks had been lengthened, of course, and his pay raised only fractionally - but it was certainly better than not having a job at all."
+ silkworm_diseases.9.a: "A toast to our scientists!"
+ silkworm_diseases.9.b: "Reactivate our silk industries - there is no time to waste."

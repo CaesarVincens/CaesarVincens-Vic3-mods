@@ -1,0 +1,15 @@
+﻿l_english:
+ pes_affected_countries: "Affected countries"
+ pes_affected_countries_desc: "These countries are suffering from [Localize('je_silkworm_diseases')|l]. Their silk industries are severly hurting."
+ pes_cure_countries: "Countries with a cure"
+ pes_cure_countries_desc: "These countries have learned of a technique to mitigate pébrine"
+ effect_sort_com_situation_faction: "test"
+
+ com_situation_completion_conditions: "Completion Condition"
+ com_situation_failure_conditions: "Failure Condition"
+
+ PEBRINE_LIST_HEADER: "$TOOLTIP_DELIMITER$\nYour [Concept('concept_state', '$concept_states$')] and number of [GetBuildingType('building_silk_plantation').GetName] that are currently affected by [Localize('je_silkworm_diseases')|l]:"
+ PEBRINE_LIST_CONTENT: "#indent_newline:3 \n[GetScriptedGui('je_silkworm_diseases_states_sgui').ExecuteTooltip(GuiScope.SetRoot(ROOT.GetCountry.MakeScope).End)]#!"
+ PEBRINE_LIST_ENTRY: "[THIS.GetState.GetName]: [SCOPE.sB('silk_plantation').GetExpansionLevel|v]"
+ PEBRINE_LIST_EMPTY_STATE: "No [concept_state] is currently affected by [Localize('je_silkworm_diseases')|l]"
+ PEBRINE_LIST_AFTER: "@information! Using the [GetDecreeType('decree_encourage_agricultural_industry').GetName] [concept_decree] on affected $concept_states$ is required to end the epidemic"

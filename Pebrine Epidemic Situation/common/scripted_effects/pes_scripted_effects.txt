@@ -1,0 +1,37 @@
+﻿pes_end_silkworm_diseases = {
+	hidden_effect = {
+		clear_variable_list = pebrine_states
+		remove_com_situation_faction_country_all = { country = root }
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						is_party_in_com_situation = yes
+					}
+				}
+			}
+			end_com_situation = { situation_id = pes_je_silkworm_diseases }
+		}
+	}
+}
+
+update_pebrine_state_list = {
+	if = {
+		limit = {
+			any_scope_state = {
+				has_modifier = modifier_pebrine_state_modifier
+			}
+		}
+		every_scope_state = {
+			limit = {
+				has_modifier = modifier_pebrine_state_modifier
+			}
+			root = {
+				add_to_variable_list = {
+					name = pebrine_states
+					target = prev
+				}
+			}
+		}
+	}
+}
