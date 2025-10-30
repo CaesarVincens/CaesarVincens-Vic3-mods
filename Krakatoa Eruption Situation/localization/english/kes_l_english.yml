@@ -1,0 +1,7 @@
+﻿l_english:
+ kes_affected: "Affected countries"
+ kes_affected_desc: "These countries were struck by tsunamis from $je_krakatoa$. Many have been severely devastated."
+ kes_humanitarians: "Humanitarian countries"
+ kes_humanitarians_desc: "These countries have supported the victims of $je_krakatoa$."
+ kes_bystanders: "Other countries"
+ kes_bystanders_desc: "These countries weren't directly affected by $je_krakatoa$, but they are feeling the after effects."

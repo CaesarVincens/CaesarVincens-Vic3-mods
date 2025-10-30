@@ -1,6 +1,6 @@
-﻿kjs_icon_krakatoa = {
+﻿kes_icon_krakatoa = {
 	# This is the icon used for the example button
-	icon = "gfx/interface/situation/kjs_icon_krakatoa.dds"
+	icon = "gfx/interface/situation/kes_icon_krakatoa.dds"
 
 	# Never allow button ideologies to be shown
 	show_in_list = no

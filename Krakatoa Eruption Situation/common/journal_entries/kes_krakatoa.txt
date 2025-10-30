@@ -22,29 +22,29 @@
 						has_modifier = krakatoa_cost_modifier
 						is_com_situation_faction_member = {
 							side = neutral
-							faction = kjs_bystanders
+							faction = kes_bystanders
 						}
 					}
 					reassign_com_situation_faction_country = {
 						side = neutral
-						name = kjs_humanitarians
+						name = kes_humanitarians
 						country = root
 					}
 				}
 			}
 			sort_com_situation_faction = {
 				side = neutral
-				name = kjs_affected
+				name = kes_affected
 				order = prestige
 			}
 			sort_com_situation_faction = {
 				side = neutral
-				name = kjs_humanitarians
+				name = kes_humanitarians
 				order = prestige
 			}
 			sort_com_situation_faction = {
 				side = neutral
-				name = kjs_bystanders
+				name = kes_bystanders
 				order = prestige
 			}
 		}
@@ -52,23 +52,23 @@
 
 	immediate = {
 		create_com_situation_no_sides = {
-			situation_id = kjs_je_krakatoa
-			icon = kjs_icon_krakatoa
+			situation_id = kes_je_krakatoa
+			icon = kes_icon_krakatoa
 		}
 		create_com_situation_faction = {
 			side = neutral
-			name = kjs_affected
-			desc = kjs_affected_desc
+			name = kes_affected
+			desc = kes_affected_desc
 		}
 		create_com_situation_faction = {
 			side = neutral
-			name = kjs_humanitarians
-			desc = kjs_humanitarians_desc
+			name = kes_humanitarians
+			desc = kes_humanitarians_desc
 		}
 		create_com_situation_faction = {
 			side = neutral
-			name = kjs_bystanders
-			desc = kjs_bystanders_desc
+			name = kes_bystanders
+			desc = kes_bystanders_desc
 		}
 		if = {
 			limit = {
@@ -83,7 +83,7 @@
 			}
 			add_com_situation_faction_country = {
 				side = neutral
-				name = kjs_affected
+				name = kes_affected
 				country = root
 			}
 			every_scope_state = {
@@ -106,7 +106,7 @@
 		else = {
 			add_com_situation_faction_country = {
 				side = neutral
-				name = kjs_bystanders
+				name = kes_bystanders
 				country = root
 			}
 		}

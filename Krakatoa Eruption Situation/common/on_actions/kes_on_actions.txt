@@ -1,12 +1,12 @@
 ﻿on_game_started = {
     on_actions = {
-        on_kjs_start
+        on_kes_start
     }
 }
-on_kjs_start = {
+on_kes_start = {
     effect = {
         set_global_variable = {
-            name = kjs_is_loaded
+            name = kes_is_loaded
             value = yes
         }
     }
