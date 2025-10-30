@@ -7,14 +7,3 @@ lcs_error_suppression.0001 = {
 		exists = global_var:lcs_is_loaded
 	}
 }
-
-lcs_error_suppression.0002 = {
-	hidden = yes
-	#orphan = yes
-	trigger = {
-		#exists = global_var:lcs_is_loaded
-	}
-	immediate = {
-		set_global_variable = lcs_is_loaded
-	}
-}
