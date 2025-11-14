@@ -15,22 +15,22 @@
  lcs_participants_desc: "These countries are participating in the London Conference"
  lcs_on_bel_victory: "#title With a Belgian Victory:#!\n"
  lcs_on_net_victory: "#title With a Dutch Victory:#!\n"
- lcs_net_victory: "The Dutch come out on top if:\n$lcs_tt_net_2$\n$lcs_tt_net_1$\n"
- lcs_tt_net_1: "[ComTrigger(GlobalVarIsSet('london_treaty_signed_bel_global_var'))] $je_conference_of_london_tt_2$"
- lcs_tt_net_2: "[ComTrigger(GlobalVarIsSet('favour_netherlands_global_var'))] The Conference has $favour_netherlands_loc$"
+ lcs_net_victory: "The Dutch come out on top if:\n$lcs_tt_net_2$\n$lcs_tt_net_1$"
+ lcs_tt_net_1: "[ComTriggerBox(GlobalVarIsSet('london_treaty_signed_bel_global_var'))] $je_conference_of_london_tt_2$"
+ lcs_tt_net_2: "[ComTriggerBox(GlobalVarIsSet('favour_netherlands_global_var'))] The Conference has $favour_netherlands_loc$"
 
- lcs_bel_victory: "The Belgians come out on top if:\n$lcs_tt_bel_2$\n$lcs_tt_bel_1$\n"
- lcs_tt_bel_1: "[ComTrigger(GlobalVarIsSet('london_treaty_signed_net_global_var'))] $je_conference_of_london_tt_4$"
- lcs_tt_bel_2: "[ComTrigger(GlobalVarIsSet('favour_belgium_global_var'))] The Conference has $favour_belgium_loc$"
+ lcs_bel_victory: "The Belgians come out on top if:\n$lcs_tt_bel_2$\n$lcs_tt_bel_1$"
+ lcs_tt_bel_1: "[ComTriggerBox(GlobalVarIsSet('london_treaty_signed_net_global_var'))] $je_conference_of_london_tt_4$"
+ lcs_tt_bel_2: "[ComTriggerBox(GlobalVarIsSet('favour_belgium_global_var'))] The Conference has $favour_belgium_loc$"
 
  lcs_other_end: "Other ending conditions:\n$lcs_other_complete$\n$lcs_je_divider$\n$lcs_other_fail$" 
+ lcs_on_complete: "[GetPlayerJournalEntry('je_conference_of_london').GetOnCompleteTooltip]"
+ lcs_other_complete: "$lcs_je_divider$\n#lore Will otherwise complete if:#!\n #indent_newline:2 $lcs_either_partition$ #!\n$lcs_on_complete$"
+ lcs_either_partition: "[ComTriggerBox(Or(GlobalVarIsSet('partition_compromise_global_var'),GlobalVarIsSet('luxembourg_compromise_global_var')))] At least one of:#indent_newline:2 \n$lcs_tt_alt_1$\n$lcs_tt_alt_2$#!\n$lcs_tt_net_1$\n$lcs_tt_bel_1$"
+ lcs_tt_alt_1: "[ComTriggerBox(GlobalVarIsSet('partition_compromise_global_var'))] The Conference has $partition_compromise_loc$"
+ lcs_tt_alt_2: "[ComTriggerBox(GlobalVarIsSet('luxembourg_compromise_global_var'))] The Conference has $luxembourg_compromise_loc$"
 
- lcs_other_complete: "$lcs_je_divider$\nWill otherwise complete if:\n #indent_newline:2 $lcs_either_partition$ #!"
- lcs_either_partition: "[ComTrigger(Or(GlobalVarIsSet('partition_compromise_global_var'),GlobalVarIsSet('luxembourg_compromise_global_var')))] At least one of:#indent_newline:2 \n$lcs_tt_alt_1$\n$lcs_tt_alt_2$#!\n$lcs_tt_net_1$\n$lcs_tt_bel_1$"
- lcs_tt_alt_1: "[ComTrigger(GlobalVarIsSet('partition_compromise_global_var'))] The Conference has $partition_compromise_loc$"
- lcs_tt_alt_2: "[ComTrigger(GlobalVarIsSet('luxembourg_compromise_global_var'))] The Conference has $luxembourg_compromise_loc$"
-
- lcs_other_fail: "[GetPlayerJournalEntry('je_conference_of_london').GetFailureTooltip]"
+ lcs_other_fail: "[GetPlayerJournalEntry('je_conference_of_london').GetFailureTooltip]\n[GetPlayerJournalEntry('je_conference_of_london').GetOnFailTooltip]"
 
  lcs_vote_header_start: "$lcs_vote_header_main$$lcs_not_yet_settled_loc$"
  lcs_vote_header_favour_belgium_loc: "$lcs_vote_header_main$$favour_belgium_loc$"
@@ -39,9 +39,5 @@
  lcs_vote_header_luxembourg_compromise_loc: "$lcs_vote_header_main$$luxembourg_compromise_loc$"
  lcs_not_yet_settled_loc: "not yet concluded."
  lcs_vote_header_main: "The conference will conclude in #variable [GetGlobalVariable('je_conference_of_london_timer').GetValue]#! months. The proposal with the most prestige #tooltippable #tooltip:london_treaty_voting_rules supporting#!#! it will then be selected as the conference's offical solution.\n\n#Bold Result#!\nThe Conference has "
-
- com_situation_alternate_ending_conditions: "Alternative Ending Condition"
- com_green_checkmark_box: "@green_checkmark_box!"
- com_simple_box: "@simple_box!"
 
  lcs_je_divider: "@divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"

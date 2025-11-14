@@ -3,8 +3,8 @@
  pes_affected_countries_desc: "These countries are suffering from [Localize('je_silkworm_diseases')|l]. Their silk industries are severly hurting."
  pes_cure_countries: "Countries with a cure"
  pes_cure_countries_desc: "These countries have learned of a technique to mitigate pébrine"
- effect_sort_com_situation_faction: "test"
-
+ pes_cure_leader: "Pébrine Cure"
+ pes_cure_leader_desc: "This country was the first to develop a cure for pébrine."
  PEBRINE_LIST_HEADER: "$TOOLTIP_DELIMITER$\nYour [Concept('concept_state', '$concept_states$')] and number of [GetBuildingType('building_silk_plantation').GetName] that are currently affected by [Localize('je_silkworm_diseases')|l]:"
  PEBRINE_LIST_CONTENT: "#indent_newline:3 \n[GetScriptedGui('je_silkworm_diseases_states_sgui').ExecuteTooltip(GuiScope.SetRoot(ROOT.GetCountry.MakeScope).End)]#!"
  PEBRINE_LIST_ENTRY: "[THIS.GetState.GetName]: [SCOPE.sB('silk_plantation').GetExpansionLevel|v]"

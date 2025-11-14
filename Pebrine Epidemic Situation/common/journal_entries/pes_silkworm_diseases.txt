@@ -132,7 +132,7 @@
 			situation_id = pes_je_silkworm_diseases
 			icon = pes_icon_pebrine
 		}
-		set_je_reason_location = yes
+		set_com_je_reason_location = yes
 		create_com_situation_faction = {
 			side = neutral
 			name = pes_affected_countries

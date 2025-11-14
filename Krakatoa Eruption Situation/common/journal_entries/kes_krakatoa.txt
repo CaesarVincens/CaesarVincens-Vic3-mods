@@ -55,6 +55,7 @@
 			situation_id = kes_je_krakatoa
 			icon = kes_icon_krakatoa
 		}
+		set_com_je_reason_location = yes
 		create_com_situation_faction = {
 			side = neutral
 			name = kes_affected

@@ -605,6 +605,17 @@ silkworm_diseases.7 = {
 			name = pes_cure_countries
 			country = root
 		}
+		if = {
+			limit = {
+				NOT = { exists_com_situtation_side = { side = left } }
+			}
+			create_com_situation_side = {
+				side = left
+				side_name = pes_cure_leader
+				side_desc = pes_cure_leader_desc
+				side_leader_country = ROOT
+			}
+		}
 	}
 
 	option = {
