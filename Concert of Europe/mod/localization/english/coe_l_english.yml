@@ -1,0 +1,12 @@
+﻿l_english:
+ je_coe_concert_of_europe: "Concert of Europe"
+ je_coe_concert_of_europe_reason: "Concert of Europe"
+
+ COE_INNER_SPHERE_TT: "Inner Sphere\n[GetScriptedGui('je_coe_concert_of_europe_inner_sphere_sgui').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ COE_OUTER_SPHERE_TT: "Outer Sphere\n[GetScriptedGui('je_coe_concert_of_europe_outer_sphere_sgui').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ COE_SPHERE_LIST_ENTRY: "[AddLocalizationIf(THIS.GetCountry.Exists, THIS.GetCountry.GetName)]"
+ coe_gui_inner_spheres: "Inner Spheres"
+ coe_gui_outer_spheres: "Outer Spheres"
+ COE_COUNTRY_INNER_SPHERE: "[Country.GetAdjectiveNoFormatting] Inner Sphere"
+ COE_COUNTRY_OUTER_SPHERE: "[Country.GetAdjectiveNoFormatting] Outer Sphere"
+ COE_SPHERE: "Sphere"

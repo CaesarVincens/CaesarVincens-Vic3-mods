@@ -1,0 +1,34 @@
+﻿
+je_coe_concert_of_europe_inner_sphere_sgui = {
+    scope = country
+
+    effect = {
+        if = {
+            limit = {
+                has_variable_list = coe_inner_sphere
+            }
+            every_in_list = {
+                variable = coe_inner_sphere
+
+                custom_tooltip = "COE_SPHERE_LIST_ENTRY" # for each print a line
+            }
+        }
+    }
+}
+
+je_coe_concert_of_europe_outer_sphere_sgui = {
+    scope = country
+
+    effect = {
+        if = {
+            limit = {
+                has_variable_list = coe_outer_sphere
+            }
+            every_in_list = {
+                variable = coe_outer_sphere
+
+                custom_tooltip = "COE_SPHERE_LIST_ENTRY" # for each print a line
+            }
+        }
+    }
+}

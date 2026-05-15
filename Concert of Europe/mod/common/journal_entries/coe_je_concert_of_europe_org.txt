@@ -1,0 +1,69 @@
+﻿je_coe_concert_of_europe = {
+	group = je_group_com_regional_organizations
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	weight = 100
+
+	widget = {
+		gui = "gui/coe_journal_widgets/interorg_widgets.gui"
+		name = "widget_coe_concert_of_europe"
+		container = "custom_widget_container_je_icon"
+	}
+
+	should_be_involved = {
+		#country_rank >= rank_value:great_power
+		#capital = { is_in_geographic_region = geographic_region_europe }
+		has_variable = coe_concert_of_europe_member
+	}
+
+	should_show_when_not_involved = {
+		OR = {
+			country_rank >= rank_value:great_power
+			capital = { is_in_geographic_region = geographic_region_europe }
+		}
+	}
+
+	immediate = {
+		scope:journal_entry = {
+			com_hide_all_journal_elements_for_interorg_effect = yes
+		}
+		set_global_variable = {
+			name = je_coe_concert_of_europe_var
+			value = scope:journal_entry
+		}
+		#com_activate_interorg_sidebar = yes
+	}
+	immediate_all_involved = {
+		coe_build_sphere = {
+			SCOPE = root
+		}
+	}
+	on_monthly_pulse = {
+		effect = {
+			global_var:je_coe_concert_of_europe_var = {
+				every_scope_je_involved = {
+					save_scope_as = gp
+					coe_build_sphere = {
+						SCOPE = scope:gp
+					}
+				}
+			}
+		}
+	}
+	on_become_involved_after_activation = {
+		coe_build_sphere = {
+			SCOPE = root
+		}
+	}
+	complete = {
+		always = no
+	}
+
+	on_complete = {
+		custom_tooltip = com_debug.a
+	}
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 1000
+	transferable = no
+	can_revolution_inherit = yes
+}

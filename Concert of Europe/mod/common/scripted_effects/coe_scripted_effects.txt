@@ -1,0 +1,66 @@
+﻿
+coe_build_sphere = {
+	$SCOPE$ ?= {
+		clear_variable_list = coe_inner_sphere
+		clear_variable_list = coe_outer_sphere
+	}
+	every_country = {
+		limit = {
+			exists = $SCOPE$
+			OR = {
+				is_direct_subject_of = $SCOPE$
+				trigger_if = {
+					limit = { $SCOPE$ = { is_power_bloc_leader = yes } }
+					is_in_same_power_bloc = $SCOPE$
+				}
+			}
+			NOR = {
+				$SCOPE$ = this
+				is_involved_in_journal_entry = je_coe_concert_of_europe
+				is_indirect_subject_of = $SCOPE$
+			}
+		}
+		$SCOPE$ = {
+			add_to_variable_list = {
+				name = coe_inner_sphere
+				target = prev
+			}
+			sort_variable_list = {
+				name = coe_inner_sphere
+				order = prestige
+			}
+		}
+	}
+	every_country = {
+		limit = {
+			exists = $SCOPE$
+			OR = {
+				is_indirect_subject_of = $SCOPE$
+				any_neighbouring_state = {
+					owner ?= $SCOPE$
+				}
+			}
+			NOR = {
+				$SCOPE$ = {
+					is_target_in_variable_list = {
+						name = coe_inner_sphere
+						target = prev
+					}
+				}
+				$SCOPE$ = this
+				is_involved_in_journal_entry = je_coe_concert_of_europe
+				is_direct_subject_of = $SCOPE$
+			}
+		}
+		$SCOPE$ = {
+			add_to_variable_list = {
+				name = coe_outer_sphere
+				target = prev
+			}
+			sort_variable_list = {
+				name = coe_outer_sphere
+				order = prestige
+			}
+		}
+	}
+}

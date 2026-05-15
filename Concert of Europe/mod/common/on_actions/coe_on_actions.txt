@@ -9,5 +9,11 @@ on_coe_start = {
             name = coe_is_loaded
             value = yes
         }
+        c:GBR ?= { set_variable = coe_concert_of_europe_member }
+        c:FRA ?= { set_variable = coe_concert_of_europe_member }
+        c:PRU ?= { set_variable = coe_concert_of_europe_member }
+        c:RUS ?= { set_variable = coe_concert_of_europe_member }
+        c:AUS ?= { set_variable = coe_concert_of_europe_member }
+        add_contextless_journal_entry = je_coe_concert_of_europe
     }
 }
