@@ -24,21 +24,30 @@
 
 	immediate = {
 		scope:journal_entry = {
+			set_variable = {
+				name = com_header_var
+				value = flag:coe_great_powers
+			}
 			com_hide_all_journal_elements_for_interorg_effect = yes
 		}
 		set_global_variable = {
 			name = je_coe_concert_of_europe_var
 			value = scope:journal_entry
 		}
+		coe_save_ordered_rulers = yes
 		#com_activate_interorg_sidebar = yes
 	}
 	immediate_all_involved = {
-		coe_build_sphere = {
-			SCOPE = root
+		root = {
+			save_scope_as = gp
+			coe_build_sphere = {
+				SCOPE = scope:gp
+			}
 		}
 	}
 	on_monthly_pulse = {
 		effect = {
+			coe_save_ordered_rulers = yes
 			global_var:je_coe_concert_of_europe_var = {
 				every_scope_je_involved = {
 					save_scope_as = gp
@@ -50,9 +59,13 @@
 		}
 	}
 	on_become_involved_after_activation = {
-		coe_build_sphere = {
-			SCOPE = root
+		root = {
+			save_scope_as = gp
+			coe_build_sphere = {
+				SCOPE = scope:gp
+			}
 		}
+		coe_save_ordered_rulers = yes
 	}
 	complete = {
 		always = no

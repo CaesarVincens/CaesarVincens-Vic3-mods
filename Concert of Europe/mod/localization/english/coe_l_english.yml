@@ -9,4 +9,14 @@
  coe_gui_outer_spheres: "Outer Spheres"
  COE_COUNTRY_INNER_SPHERE: "[Country.GetAdjectiveNoFormatting] Inner Sphere"
  COE_COUNTRY_OUTER_SPHERE: "[Country.GetAdjectiveNoFormatting] Outer Sphere"
+ COE_COUNTRY_INNER_SPHERE_SIZE: "[Country.MakeScope.Var('coe_inner_sphere_size').GetValue|0] Inner $coe_inner_spherelings$"
+ COE_COUNTRY_OUTER_SPHERE_SIZE: "[Country.MakeScope.Var('coe_outer_sphere_size').GetValue|0] Outer $coe_outer_spherelings$"
  COE_SPHERE: "Sphere"
+ COE_CONCERT_POWERS: "European Great Powers"
+ 
+ coe_inner_spherelings: "[SelectLocalization(GreaterThan_CFixedPoint(Country.MakeScope.Var('coe_inner_sphere_size').GetValue, '(CFixedPoint)1'), 'coe_spherelings', 'coe_sphereling')]"
+ coe_outer_spherelings: "[SelectLocalization(GreaterThan_CFixedPoint(Country.MakeScope.Var('coe_outer_sphere_size').GetValue, '(CFixedPoint)1'), 'coe_spherelings', 'coe_sphereling')]"
+
+ coe_sphereling: "Sphereling"
+ coe_spherelings: "Spherelings"
+ coe_great_powers: "The Great Powers"
