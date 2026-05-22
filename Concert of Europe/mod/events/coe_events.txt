@@ -6,4 +6,12 @@ coe_error_suppression.0001 = {
   trigger = {
     exists = global_var:coe_is_loaded
   }
+  immediate = {
+    fix_variable_error = { variable = coe_great_powers }
+    fix_variable_error = { variable = coe_ruler_0 }
+    fix_variable_error = { variable = coe_ruler_1 }
+    fix_variable_error = { variable = coe_ruler_2 }
+    fix_variable_error = { variable = coe_ruler_3 }
+    fix_variable_error = { variable = coe_ruler_4 }
+  }
 }

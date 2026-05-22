@@ -24,7 +24,7 @@ coe_build_sphere = {
 			}
 			NOR = {
 				$SCOPE$ = this
-				is_involved_in_journal_entry = je_coe_concert_of_europe
+				is_involved_in_journal_entry = je_coe_spheres_of_influence
 				is_indirect_subject_of = $SCOPE$
 			}
 		}
@@ -38,15 +38,14 @@ coe_build_sphere = {
 				add = 1
 			}
 		}
+		coe_calc_sphere_influence = { SCOPE = $SCOPE$ }
 	}
 	every_country = {
 		limit = {
 			exists = $SCOPE$
 			OR = {
 				is_indirect_subject_of = $SCOPE$
-				any_neighbouring_state = {
-					owner ?= $SCOPE$
-				}
+				is_adjacent_to_country = $SCOPE$
 			}
 			NOR = {
 				$SCOPE$ = {
@@ -56,7 +55,7 @@ coe_build_sphere = {
 					}
 				}
 				$SCOPE$ = this
-				is_involved_in_journal_entry = je_coe_concert_of_europe
+				is_involved_in_journal_entry = je_coe_spheres_of_influence
 				is_direct_subject_of = $SCOPE$
 			}
 		}
@@ -70,6 +69,7 @@ coe_build_sphere = {
 				add = 1
 			}
 		}
+		coe_calc_sphere_influence = { SCOPE = $SCOPE$ }
 	}
 	$SCOPE$ = {
 		sort_variable_list = {
@@ -90,13 +90,14 @@ coe_save_ordered_rulers = {
 	coe_save_ordered_ruler = { num = 3 }
 	coe_save_ordered_ruler = { num = 4 }
 }
+
 coe_save_ordered_ruler = {
-	global_var:je_coe_concert_of_europe_var = {
+	global_var:je_coe_spheres_of_influence_var = {
 		ordered_scope_je_involved = {
 			order_by = country_rank
 			position = $num$
 			ruler ?= {
-				global_var:je_coe_concert_of_europe_var = {
+				global_var:je_coe_spheres_of_influence_var = {
 					set_variable = {
 						name = coe_ruler_$num$
 						value = prev
@@ -104,5 +105,37 @@ coe_save_ordered_ruler = {
 				}
 			}
 		}
+	}
+}
+
+coe_calc_sphere_influence = {
+	$SCOPE$ ?= {
+		save_scope_as = influencing_gp
+	}
+	save_scope_as = influenced_country
+	coe_update_variable_map_value = {
+		name = coe_sphere_influence
+		key = scope:influencing_gp
+		value = coe_great_power_influence
+	}
+}
+
+coe_update_variable_map_value = {
+	if = {
+		limit = {
+			is_key_in_variable_map = {
+				name = $name$
+				target = $key$
+			}
+		}
+		remove_from_variable_map = {
+			name = $name$
+			key = $key$
+		}
+	}
+	add_to_variable_map = {
+		name = $name$
+		key = $key$
+		value = $value$
 	}
 }

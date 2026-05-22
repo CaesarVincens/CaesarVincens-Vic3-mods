@@ -1,1 +1,145 @@
-﻿coe_test_value = 1
+﻿coe_great_power_influence = {
+	#scope:influenced_country
+	#scope:influencing_gp
+	scope:influenced_country = {
+		if = {
+			limit = { is_direct_subject_of = scope:influencing_gp }
+			add = 100
+		}
+		else_if = {
+			limit = { is_indirect_subject_of = scope:influencing_gp }
+			add = 20
+		}
+		else_if = {
+			limit = {
+				is_in_power_bloc = yes
+				is_in_same_power_bloc = scope:influencing_gp
+				power_bloc_leader ?= scope:influencing_gp
+			}
+			add = 10
+		}
+		if = {
+			limit = { is_adjacent_to_country = scope:influencing_gp }
+			add = 10
+		}
+		if = {
+			limit = {
+				any_scope_treaty = {
+					binds = prev
+					binds = scope:influencing_gp
+				}
+			}
+			every_scope_treaty = {
+				limit = {
+					binds = prev
+					binds = scope:influencing_gp
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = alliance }
+					}
+					add = 50
+				}
+				else_if = {
+					limit = {
+						any_scope_article = {
+							OR = {
+								has_type = defensive_pact
+								has_type = guarantee_independence
+								has_type = support_independence
+							}
+						}
+					}
+					add = 25
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = foreign_investment_rights }
+					}
+					add = 25
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = acquire_monopoly_for_company }
+					}
+					add = 15
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = treaty_port }
+					}
+					add = 15
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = law_commitment }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = offer_embassy }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = non_piracy_agreement }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = strait_access }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = no_strait_closure }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = abandon_piracy }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						any_scope_article = { has_type = military_assistance }
+					}
+					add = 15
+				}
+			
+			}
+		}
+		if = {
+			limit = {
+				has_diplomatic_pact = {
+					who = scope:influencing_gp
+					type = da_support_regime
+					#is_initiator = yes/no
+				}
+			}
+			add = 5
+		}
+		if = {
+			limit = {
+				has_diplomatic_pact = {
+					who = scope:influencing_gp
+					type = expel_diplomats
+					is_initiator = yes
+				}
+			}
+			add = -15
+		}
+		add = {
+			scope:influencing_gp = {
+				value = relations:prev
+			}
+			divide = 20
+		}
+	}
+}

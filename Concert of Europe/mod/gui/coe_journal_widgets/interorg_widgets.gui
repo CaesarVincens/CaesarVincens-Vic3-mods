@@ -1614,11 +1614,12 @@ types coe_concert_of_europe_types {
 					parentanchor = hcenter
 					### PLACEHOLDER
 					power_bloc_header_grid_item = {
+						visible = "[Scope.VariableMapExists('coe_sphere_influence')]"
 						using = tooltip_se
 						tooltip = "[Country.GetInfamyDesc]"
 
 						blockoverride "text" {
-							raw_text = "#v [Country.GetInfamy|1-]#!"
+							text = "COE_sphere_influence" #v [Country.GetVariableFromVariableMap('coe_sphere_influence',Scope)|1-]#!"
 						}
 
 						blockoverride "icon" {
