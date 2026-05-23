@@ -72,377 +72,377 @@ types coe_concert_of_europe_types {
 	}
 
 	type coe_base_panel = widget {
-			size = { 560 274 }
-			visible = "[ComJournalVar('coe_ruler_0').IsSet]"
-			widget = {
-				size = { 556 274 }
+		size = { 560 274 }
+		visible = "[ComJournalVar('coe_ruler_0').IsSet]"
+		widget = {
+			size = { 556 274 }
+			parentanchor = hcenter
+
+			### OVERVIEW BACKGROUND
+			background = {
+				block "interorg_backdrop_texture" {
+					texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
+				}
+				fittype = centercrop
+				using = frame_small_mask
+			}
+
+			background = {
+				using = simple_frame
+			}
+
+			### CHARACTERS
+			# BLOC MEMBER 4
+			# MEMBER AVAILABLE
+			container = {
+				visible = "[ComJournalVar('coe_ruler_3').IsSet]"
 				parentanchor = hcenter
+				position = { -210 15 }
+				maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
 
-				### OVERVIEW BACKGROUND
-				background = {
-					block "interorg_backdrop_texture" {
-						texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
-					}
-					fittype = centercrop
-					using = frame_small_mask
-				}
-
-				background = {
-					using = simple_frame
-				}
-
-				### CHARACTERS
-				# BLOC MEMBER 4
-				# MEMBER AVAILABLE
-				container = {
-					visible = "[ComJournalVar('coe_ruler_3').IsSet]"
+				character_portrait_base = {
 					parentanchor = hcenter
-					position = { -210 15 }
-					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+					datacontext = "[ComJournalVar('coe_ruler_3').GetCharacter]"
 
-					character_portrait_base = {
-						parentanchor = hcenter
-						datacontext = "[ComJournalVar('coe_ruler_3').GetCharacter]"
+					size = { 250 270 }
 
-						size = { 250 270 }
-
-						blockoverride "portrait_size" {
-							block "character_portrait_size" {
-								size = { 265 265 }
-							}
-						}
-
-						blockoverride "portrait_texture" {
-							portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_right', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
-						}
-
-						blockoverride "portrait_icons" {}
-						blockoverride "tooltip" {}
-						blockoverride "show_hat" {}
-						blockoverride "highlight" {}
-
-						blockoverride "portrait_button" {
-							button = {
-								parentanchor = hcenter
-								size = { 100% 100% }
-
-								block "portrait_button_onclick" {
-									onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
-								}
-
-								block "portrait_button_onrightclick" {
-									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
-								}
-
-								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_3').GetCharacter )]"
-								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
-							}
+					blockoverride "portrait_size" {
+						block "character_portrait_size" {
+							size = { 265 265 }
 						}
 					}
-				}
 
-				# NO FOURTH MEMBER AVAILABLE
-				widget = {
-					visible = "[Not( ComJournalVar('coe_ruler_3').IsSet)]"
-
-					parentanchor = hcenter
-					size = { 280 280 }
-					position = { -210 15 }
-
-					icon = {
-						size = { 260 260 }
-						texture = "gfx/interface/power_blocs/bloc_no_member.dds"
-						alpha = 1
+					blockoverride "portrait_texture" {
+						portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_right', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
 					}
-				}
 
-				### BLOC MEMBER 2
-				# MEMBER AVAILABLE
-				container = {
-					visible = "[ComJournalVar('coe_ruler_1').IsSet]"
-					parentanchor = hcenter
-					position = { -110 15 }
-					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+					blockoverride "portrait_icons" {}
+					blockoverride "tooltip" {}
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
 
-					character_portrait_base = {
-						parentanchor = hcenter
-						datacontext = "[ComJournalVar('coe_ruler_1').GetCharacter]"
+					blockoverride "portrait_button" {
+						button = {
+							parentanchor = hcenter
+							size = { 100% 100% }
 
-						size = { 250 265 }
-
-						blockoverride "portrait_size" {
-							block "character_portrait_size" {
-								size = { 280 280 }
+							block "portrait_button_onclick" {
+								onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
 							}
-						}
 
-						blockoverride "portrait_texture" {
-							portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_right', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
-						}
-
-						blockoverride "portrait_mask" {
-							mask = "gfx/interface/portraits/portrait_mask_small_fade_bottom.dds"
-						}
-
-						blockoverride "portrait_icons" {}
-						blockoverride "tooltip" {}
-						blockoverride "show_hat" {}
-						blockoverride "highlight" {}
-
-						blockoverride "portrait_button" {
-							button = {
-								parentanchor = hcenter
-								size = { 100% 100% }
-
-								block "portrait_button_onclick" {
-									onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
-								}
-
-								block "portrait_button_onrightclick" {
-									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
-								}
-
-								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_1').GetCharacter )]"
-								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+							block "portrait_button_onrightclick" {
+								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
 							}
+
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_3').GetCharacter )]"
+							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 						}
 					}
-				}
-
-				# NO SECOND MEMBER AVAILABLE
-				widget = {
-					visible = "[Not( ComJournalVar('coe_ruler_1').IsSet)]"
-					parentanchor = hcenter
-					size = { 280 280 }
-					position = { -110 5 }
-
-					icon = {
-						size = { 280 280 }
-						texture = "gfx/interface/power_blocs/bloc_no_member.dds"
-						alpha = 1
-					}
-				}
-
-				### BLOC MEMBER 5
-				# MEMBER AVAILABLE
-				container = {
-					visible = "[ComJournalVar('coe_ruler_4').IsSet]"
-					parentanchor = hcenter
-					position = { 210 15 }
-					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
-
-					character_portrait_base = {
-						parentanchor = hcenter
-						datacontext = "[ComJournalVar('coe_ruler_4').GetCharacter]"
-
-						size = { 250 270 }
-
-						blockoverride "portrait_size" {
-							block "character_portrait_size" {
-								size = { 265 265 }
-							}
-						}
-
-						blockoverride "portrait_texture" {
-							portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_left', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
-						}
-
-						blockoverride "portrait_icons" {}
-						blockoverride "tooltip" {}
-						blockoverride "show_hat" {}
-						blockoverride "highlight" {}
-
-						blockoverride "portrait_button" {
-							button = {
-								parentanchor = hcenter
-								size = { 100% 100% }
-
-								block "portrait_button_onclick" {
-									onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
-								}
-
-								block "portrait_button_onrightclick" {
-									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
-								}
-
-								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_4').GetCharacter )]"
-								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
-							}
-						}
-					}
-				}
-
-				# NO FIFTH MEMBER AVAILABLE
-				widget = {
-					visible = "[Not(ComJournalVar('coe_ruler_4').IsSet)]"
-					parentanchor = hcenter
-					size = { 280 280 }
-					position = { 210 15 }
-
-					icon = {
-						size = { 260 260 }
-						texture = "gfx/interface/power_blocs/bloc_no_member.dds"
-						mirror = horizontal
-						alpha = 1
-					}
-				}
-
-				### BLOC MEMBER 3
-				# MEMBER AVAILABLE
-				container = {
-					visible = "[ComJournalVar('coe_ruler_2').IsSet]"
-					parentanchor = hcenter
-					position = { 110 15 }
-					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
-
-					character_portrait_base = {
-						parentanchor = hcenter
-						datacontext = "[ComJournalVar('coe_ruler_2').GetCharacter]"
-
-						size = { 250 265 }
-
-						blockoverride "portrait_size" {
-							block "character_portrait_size" {
-								size = { 280 280 }
-							}
-						}
-
-						blockoverride "portrait_texture" {
-							portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_left', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
-						}
-
-						blockoverride "portrait_icons" {}
-						blockoverride "tooltip" {}
-						blockoverride "show_hat" {}
-						blockoverride "highlight" {}
-
-						blockoverride "portrait_button" {
-							button = {
-								parentanchor = hcenter
-								size = { 100% 100% }
-
-								block "portrait_button_onclick" {
-									onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
-								}
-
-								block "portrait_button_onrightclick" {
-									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
-								}
-
-								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_2').GetCharacter )]"
-								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
-							}
-						}
-					}
-				}
-
-				# NO THIRD MEMBER AVAILABLE
-				widget = {
-					visible = "[Not(ComJournalVar('coe_ruler_2').IsSet)]"
-					parentanchor = hcenter
-					size = { 280 280 }
-					position = { 110 5 }
-
-					icon = {
-						size = { 280 280 }
-						texture = "gfx/interface/power_blocs/bloc_no_member.dds"
-						mirror = horizontal
-						alpha = 1
-					}
-				}
-
-				### BLOC MEMBER 1 (LEADER)
-				container = {
-					parentanchor = hcenter
-					maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
-					visible = "[ComJournalVar('coe_ruler_0').IsSet]"
-					datacontext = "[ComJournalVar('coe_ruler_0').GetCharacter]"
-
-					character_portrait_base = {
-						parentanchor = hcenter
-						size = { 250 265 }
-
-						blockoverride "portrait_size" {
-							block "character_portrait_size" {
-								size = { 300 300 }
-							}
-						}
-
-						blockoverride "portrait_position" {
-							position = { 0 15 }
-						}
-
-						blockoverride "portrait_texture" {
-							portrait_texture = "[Character.GetAnimatedPortrait('pop_environment', 'camera_body', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
-						}
-
-						blockoverride "portrait_icons" {}
-						blockoverride "tooltip" {}
-						blockoverride "show_hat" {}
-						blockoverride "highlight" {}
-
-						blockoverride "portrait_button" {
-							button = {
-								parentanchor = hcenter
-								size = { 100% 100% }
-
-								block "portrait_button_onclick" {
-									onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
-								}
-
-								block "portrait_button_onrightclick" {
-									onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
-								}
-
-								onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_0').GetCharacter )]"
-								onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
-							}
-						}
-					}
-				}
-
-				### FLAGS
-				#BLOC MEMBER 1 FLAG
-				small_flag = {
-					visible = "[ComJournalVar('coe_ruler_0').IsSet]"
-					datacontext = "[ComJournalVar('coe_ruler_0').GetCharacter.GetCountry]"
-					position = { 0 -20 }
-					parentanchor = hcenter|bottom
-				}
-
-				#BLOC MEMBER 2 FLAG
-				tiny_flag = {
-					visible = "[ComJournalVar('coe_ruler_1').IsSet]"
-					position = { -110 -20 }
-					parentanchor = hcenter|bottom
-					datacontext = "[ComJournalVar('coe_ruler_1').GetCharacter.GetCountry]"
-				}
-
-				#BLOC MEMBER 3 FLAG
-				tiny_flag = {
-					visible = "[ComJournalVar('coe_ruler_2').IsSet]"
-					position = { 110 -20 }
-					parentanchor = hcenter|bottom
-					datacontext = "[ComJournalVar('coe_ruler_2').GetCharacter.GetCountry]"
-				}
-
-				#BLOC MEMBER 4 FLAG
-				tiny_flag = {
-					visible = "[ComJournalVar('coe_ruler_3').IsSet]"
-					position = { -210 -20 }
-					parentanchor = hcenter|bottom
-					datacontext = "[ComJournalVar('coe_ruler_3').GetCharacter.GetCountry]"
-				}
-
-				#BLOC MEMBER 5 FLAG
-				tiny_flag = {
-					visible = "[ComJournalVar('coe_ruler_4').IsSet]"
-					position = { 210 -20 }
-					parentanchor = hcenter|bottom
-					datacontext = "[ComJournalVar('coe_ruler_4').GetCharacter.GetCountry]"
 				}
 			}
+
+			# NO FOURTH MEMBER AVAILABLE
+			widget = {
+				visible = "[Not( ComJournalVar('coe_ruler_3').IsSet)]"
+
+				parentanchor = hcenter
+				size = { 280 280 }
+				position = { -210 15 }
+
+				icon = {
+					size = { 260 260 }
+					texture = "gfx/interface/power_blocs/bloc_no_member.dds"
+					alpha = 1
+				}
+			}
+
+			### BLOC MEMBER 2
+			# MEMBER AVAILABLE
+			container = {
+				visible = "[ComJournalVar('coe_ruler_1').IsSet]"
+				parentanchor = hcenter
+				position = { -110 15 }
+				maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+
+				character_portrait_base = {
+					parentanchor = hcenter
+					datacontext = "[ComJournalVar('coe_ruler_1').GetCharacter]"
+
+					size = { 250 265 }
+
+					blockoverride "portrait_size" {
+						block "character_portrait_size" {
+							size = { 280 280 }
+						}
+					}
+
+					blockoverride "portrait_texture" {
+						portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_right', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+					}
+
+					blockoverride "portrait_mask" {
+						mask = "gfx/interface/portraits/portrait_mask_small_fade_bottom.dds"
+					}
+
+					blockoverride "portrait_icons" {}
+					blockoverride "tooltip" {}
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+
+					blockoverride "portrait_button" {
+						button = {
+							parentanchor = hcenter
+							size = { 100% 100% }
+
+							block "portrait_button_onclick" {
+								onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
+							}
+
+							block "portrait_button_onrightclick" {
+								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+							}
+
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_1').GetCharacter )]"
+							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+						}
+					}
+				}
+			}
+
+			# NO SECOND MEMBER AVAILABLE
+			widget = {
+				visible = "[Not( ComJournalVar('coe_ruler_1').IsSet)]"
+				parentanchor = hcenter
+				size = { 280 280 }
+				position = { -110 5 }
+
+				icon = {
+					size = { 280 280 }
+					texture = "gfx/interface/power_blocs/bloc_no_member.dds"
+					alpha = 1
+				}
+			}
+
+			### BLOC MEMBER 5
+			# MEMBER AVAILABLE
+			container = {
+				visible = "[ComJournalVar('coe_ruler_4').IsSet]"
+				parentanchor = hcenter
+				position = { 210 15 }
+				maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+
+				character_portrait_base = {
+					parentanchor = hcenter
+					datacontext = "[ComJournalVar('coe_ruler_4').GetCharacter]"
+
+					size = { 250 270 }
+
+					blockoverride "portrait_size" {
+						block "character_portrait_size" {
+							size = { 265 265 }
+						}
+					}
+
+					blockoverride "portrait_texture" {
+						portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_left', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+					}
+
+					blockoverride "portrait_icons" {}
+					blockoverride "tooltip" {}
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+
+					blockoverride "portrait_button" {
+						button = {
+							parentanchor = hcenter
+							size = { 100% 100% }
+
+							block "portrait_button_onclick" {
+								onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
+							}
+
+							block "portrait_button_onrightclick" {
+								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+							}
+
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_4').GetCharacter )]"
+							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+						}
+					}
+				}
+			}
+
+			# NO FIFTH MEMBER AVAILABLE
+			widget = {
+				visible = "[Not(ComJournalVar('coe_ruler_4').IsSet)]"
+				parentanchor = hcenter
+				size = { 280 280 }
+				position = { 210 15 }
+
+				icon = {
+					size = { 260 260 }
+					texture = "gfx/interface/power_blocs/bloc_no_member.dds"
+					mirror = horizontal
+					alpha = 1
+				}
+			}
+
+			### BLOC MEMBER 3
+			# MEMBER AVAILABLE
+			container = {
+				visible = "[ComJournalVar('coe_ruler_2').IsSet]"
+				parentanchor = hcenter
+				position = { 110 15 }
+				maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+
+				character_portrait_base = {
+					parentanchor = hcenter
+					datacontext = "[ComJournalVar('coe_ruler_2').GetCharacter]"
+
+					size = { 250 265 }
+
+					blockoverride "portrait_size" {
+						block "character_portrait_size" {
+							size = { 280 280 }
+						}
+					}
+
+					blockoverride "portrait_texture" {
+						portrait_texture = "[Character.GetAnimatedPortrait('characters_portrait_environment', 'camera_event_left', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+					}
+
+					blockoverride "portrait_icons" {}
+					blockoverride "tooltip" {}
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+
+					blockoverride "portrait_button" {
+						button = {
+							parentanchor = hcenter
+							size = { 100% 100% }
+
+							block "portrait_button_onclick" {
+								onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
+							}
+
+							block "portrait_button_onrightclick" {
+								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+							}
+
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_2').GetCharacter )]"
+							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+						}
+					}
+				}
+			}
+
+			# NO THIRD MEMBER AVAILABLE
+			widget = {
+				visible = "[Not(ComJournalVar('coe_ruler_2').IsSet)]"
+				parentanchor = hcenter
+				size = { 280 280 }
+				position = { 110 5 }
+
+				icon = {
+					size = { 280 280 }
+					texture = "gfx/interface/power_blocs/bloc_no_member.dds"
+					mirror = horizontal
+					alpha = 1
+				}
+			}
+
+			### BLOC MEMBER 1 (LEADER)
+			container = {
+				parentanchor = hcenter
+				maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
+				visible = "[ComJournalVar('coe_ruler_0').IsSet]"
+				datacontext = "[ComJournalVar('coe_ruler_0').GetCharacter]"
+
+				character_portrait_base = {
+					parentanchor = hcenter
+					size = { 250 265 }
+
+					blockoverride "portrait_size" {
+						block "character_portrait_size" {
+							size = { 300 300 }
+						}
+					}
+
+					blockoverride "portrait_position" {
+						position = { 0 15 }
+					}
+
+					blockoverride "portrait_texture" {
+						portrait_texture = "[Character.GetAnimatedPortrait('pop_environment', 'camera_body', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+					}
+
+					blockoverride "portrait_icons" {}
+					blockoverride "tooltip" {}
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+
+					blockoverride "portrait_button" {
+						button = {
+							parentanchor = hcenter
+							size = { 100% 100% }
+
+							block "portrait_button_onclick" {
+								onclick = "[InformationPanelBar.OpenCharacterPanel(Character.AccessSelf)]"
+							}
+
+							block "portrait_button_onrightclick" {
+								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+							}
+
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_0').GetCharacter )]"
+							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+						}
+					}
+				}
+			}
+
+			### FLAGS
+			#BLOC MEMBER 1 FLAG
+			small_flag = {
+				visible = "[ComJournalVar('coe_ruler_0').IsSet]"
+				datacontext = "[ComJournalVar('coe_ruler_0').GetCharacter.GetCountry]"
+				position = { 0 -20 }
+				parentanchor = hcenter|bottom
+			}
+
+			#BLOC MEMBER 2 FLAG
+			tiny_flag = {
+				visible = "[ComJournalVar('coe_ruler_1').IsSet]"
+				position = { -110 -20 }
+				parentanchor = hcenter|bottom
+				datacontext = "[ComJournalVar('coe_ruler_1').GetCharacter.GetCountry]"
+			}
+
+			#BLOC MEMBER 3 FLAG
+			tiny_flag = {
+				visible = "[ComJournalVar('coe_ruler_2').IsSet]"
+				position = { 110 -20 }
+				parentanchor = hcenter|bottom
+				datacontext = "[ComJournalVar('coe_ruler_2').GetCharacter.GetCountry]"
+			}
+
+			#BLOC MEMBER 4 FLAG
+			tiny_flag = {
+				visible = "[ComJournalVar('coe_ruler_3').IsSet]"
+				position = { -210 -20 }
+				parentanchor = hcenter|bottom
+				datacontext = "[ComJournalVar('coe_ruler_3').GetCharacter.GetCountry]"
+			}
+
+			#BLOC MEMBER 5 FLAG
+			tiny_flag = {
+				visible = "[ComJournalVar('coe_ruler_4').IsSet]"
+				position = { 210 -20 }
+				parentanchor = hcenter|bottom
+				datacontext = "[ComJournalVar('coe_ruler_4').GetCharacter.GetCountry]"
+			}
 		}
+	}
 
 	type coe_concert_of_europe_panel = widget {
 		# FRAME SIZE
@@ -1079,6 +1079,7 @@ types coe_concert_of_europe_types {
 					concert_of_europe_leader = {
 
 						concert_of_europe_sphere = {
+							#datacontext = "[Country.GetRuler]"
 							blockoverride "coe_sphere_header" {
 								text = "COE_COUNTRY_INNER_SPHERE"
 							}
@@ -1099,6 +1100,7 @@ types coe_concert_of_europe_types {
 							}
 						}
 						concert_of_europe_sphere = {
+							#datacontext = "[Country.GetRuler]"
 							blockoverride "coe_sphere_header" {
 								text = "COE_COUNTRY_OUTER_SPHERE"
 							}
@@ -1158,13 +1160,14 @@ types coe_concert_of_europe_types {
 					blockoverride "layout" {
 						size = { 100% 100% }
 					}
+					blockoverride "onclick" {
+						#onclick = "[GetVariableSystem.Set('coe_spheres_open',Country.GetName)]"
+					}
 					blockoverride "onclick_showmore" {
 						visible = "[Not(GetVariableSystem.HasValue('coe_spheres_open', Country.GetName))]"
-						onclick = "[GetVariableSystem.Set('coe_spheres_open',Country.GetName)]"
 					}
 					blockoverride "onclick_showless" {
 						visible = "[GetVariableSystem.HasValue('coe_spheres_open', Country.GetName)]"
-						onclick = "[GetVariableSystem.Clear('coe_spheres_open')]"
 					}
 					blockoverride "left_textbox" {}
 				}
@@ -1463,12 +1466,13 @@ types coe_concert_of_europe_types {
 	
 	type concert_of_europe_sphere_item = flowcontainer {
 		direction = vertical
-		datacontext = "[Scope.GetCountry]"
+		#datacontext = "[Scope.GetCountry]"
+		#Why? Because it's hacked together for variable maps
 		background = {
-			visible = "[Country.IsLocalPlayer]"
+			visible = "[Scope.GetCountry.IsLocalPlayer]"
 			using = fade_left_simple
 			texture = "gfx/interface/backgrounds/fancy_pattern_2.dds"
-			color = "[Country.GetMapColor]"
+			color = "[Scope.GetCountry.GetMapColor]"
 			using = frame_small_mask
 			alpha = 0.5
 		}
@@ -1477,6 +1481,7 @@ types coe_concert_of_europe_types {
 
 		# Name header
 		container = {
+			datacontext = "[Scope.GetCountry]"
 			minimumsize = { @panel_width_minus_20 38 }
 
 			background = {
@@ -1545,6 +1550,7 @@ types coe_concert_of_europe_types {
 			size = { 500 90 }
 
 			fancy_flag_ui = {
+				datacontext = "[Scope.GetCountry]"
 				parentanchor = vcenter
 				size = { 80 60 }
 
@@ -1562,6 +1568,7 @@ types coe_concert_of_europe_types {
 				spacing = 7
 
 				flowcontainer = {
+					datacontext = "[Scope.GetCountry]"
 					parentanchor = hcenter
 					spacing = @grid_spacing
 
@@ -1616,10 +1623,11 @@ types coe_concert_of_europe_types {
 					power_bloc_header_grid_item = {
 						visible = "[Scope.VariableMapExists('coe_sphere_influence')]"
 						using = tooltip_se
-						tooltip = "[Country.GetInfamyDesc]"
+						#tooltip = "[Country.GetInfamyDesc]"
 
 						blockoverride "text" {
-							text = "COE_sphere_influence" #v [Country.GetVariableFromVariableMap('coe_sphere_influence',Scope)|1-]#!"
+							raw_text = "#v [Scope.GetVariableFromVariableMap('coe_sphere_influence',Country.MakeScope).GetValue|1]#!"
+							#text = "COE_sphere_influence" #v [Scope.GetVariableFromVariableMap('coe_sphere_influence',Country.MakeScope)|1-]#!"
 						}
 
 						blockoverride "icon" {
@@ -1628,6 +1636,7 @@ types coe_concert_of_europe_types {
 					}
 					### INFAMY
 					power_bloc_header_grid_item = {
+						datacontext = "[Scope.GetCountry]"
 						using = tooltip_se
 						tooltip = "[Country.GetInfamyDesc]"
 
@@ -1646,6 +1655,7 @@ types coe_concert_of_europe_types {
 
 					### TOTAL NUMBER OF SHIPS
 					power_bloc_header_grid_item = {
+						datacontext = "[Scope.GetCountry]"
 						using = tooltip_se
 						tooltip = "PANEL_MILITARY_NAVY_CURRENT_SHIPS_TOOLTIP"
 
@@ -1661,6 +1671,7 @@ types coe_concert_of_europe_types {
 			}
 
 			flowcontainer = {
+				datacontext = "[Scope.GetCountry]"
 				visible = "[Not(Country.IsLocalPlayer)]"
 				parentanchor = right|vcenter
 				spacing = 10
@@ -1695,6 +1706,50 @@ types coe_concert_of_europe_types {
 					diplo_actions_button = {
 						visible = "[GetPlayer.IsSubjectOf(Country.Self)]"
 						size = { 35 35 }
+					}
+
+					### BLOC LEADER ACTIONS
+					diplo_actions_button = {
+						visible = "[Not(IsDataModelEmpty(Country.GetAllPowerBlocLeaderDiploActions))]"
+						size = { 35 35 }
+
+						blockoverride "onclick" {
+							onclick = "[RightClickMenuManager.ToggleBlocLeaderActions(Country.AccessSelf, PdxGuiWidget.AccessSelf)]"
+						}
+
+						blockoverride "tooltip" {
+							tooltip = "BLOC_LEADER_ACTIONS_BUTTON_TOOLTIP"
+						}
+
+						blockoverride "icon_texture" {
+							texture = "gfx/interface/buttons/button_icons/bloc_interaction.dds"
+						}
+
+						blockoverride "available_number_text" {
+							text = "[GetDataModelSize(Country.GetAvailablePowerBlocLeaderDiploActions)|+]"
+						}
+					}
+
+					### BLOC MEMBER ACTIONS
+					diplo_actions_button = {
+						visible = "[And(Not(IsDataModelEmpty(Country.GetAllPowerBlocMemberDiploActions)), IsDataModelEmpty(Country.GetAllPowerBlocLeaderDiploActions))]"
+						size = { 35 35 }
+
+						blockoverride "onclick" {
+							onclick = "[RightClickMenuManager.ToggleBlocActions(Country.AccessSelf, PdxGuiWidget.AccessSelf)]"
+						}
+
+						blockoverride "tooltip" {
+							tooltip = "BLOC_ACTIONS_BUTTON_TOOLTIP"
+						}
+
+						blockoverride "icon_texture" {
+							texture = "gfx/interface/buttons/button_icons/bloc_interaction.dds"
+						}
+
+						blockoverride "available_number_text" {
+							text = "[GetDataModelSize(Country.GetAvailablePowerBlocMemberDiploActions)|+]"
+						}
 					}
 				}
 			}

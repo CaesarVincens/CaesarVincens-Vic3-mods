@@ -22,4 +22,3 @@
  coe_great_powers: "The Great Powers"
  je_coe_spheres_of_influence: "Spheres of Influence"
  je_coe_spheres_of_influence_reason: "Because we can"
- COE_sphere_influence: "#v [Scope.GetVariableFromVariableMap('coe_sphere_influence', Character.GetCountry.MakeScope)|1-]#!"

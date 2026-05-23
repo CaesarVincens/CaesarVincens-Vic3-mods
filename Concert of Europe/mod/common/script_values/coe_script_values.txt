@@ -4,7 +4,32 @@
 	scope:influenced_country = {
 		if = {
 			limit = { is_direct_subject_of = scope:influencing_gp }
-			add = 100
+			if = {
+				limit = {
+					OR = {
+						is_subject_type = subject_type_puppet
+						is_subject_type = subject_type_colony
+						is_subject_type = subject_type_crown_land
+					}
+				}
+				add = 75
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_subject_type = subject_type_dominion
+						is_subject_type = subject_type_chartered_company
+						is_subject_type = subject_type_personal_union
+					}
+				}
+				add = 50
+			}
+			else_if = {
+				limit = {
+					is_subject_type = subject_type_protectorate
+				}
+				add = 25
+			}
 		}
 		else_if = {
 			limit = { is_indirect_subject_of = scope:influencing_gp }
@@ -135,11 +160,13 @@
 			}
 			add = -15
 		}
-		add = {
+		multiply = {
 			scope:influencing_gp = {
 				value = relations:prev
+				add = 100
 			}
-			divide = 20
+			divide = 40
+			min = 0.05
 		}
 	}
 }

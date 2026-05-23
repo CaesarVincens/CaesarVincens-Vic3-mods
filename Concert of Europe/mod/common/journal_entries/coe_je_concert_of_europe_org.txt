@@ -1,13 +1,13 @@
 ﻿je_coe_concert_of_europe = {
 	group = je_group_com_regional_organizations
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-	weight = 100
 
 	widget = {
 		gui = "gui/coe_journal_widgets/interorg_widgets.gui"
 		name = "widget_coe_concert_of_europe"
 		container = "custom_widget_container_je_icon"
 	}
+	scripted_progress_bar = je_coe_concert_of_europe_strength
 
 	should_be_involved = {
 		#country_rank >= rank_value:great_power
@@ -42,19 +42,22 @@
 			save_scope_as = gp
 			coe_build_sphere = {
 				SCOPE = scope:gp
+				journal = je_coe_concert_of_europe
 			}
 		}
 	}
 	on_monthly_pulse = {
 		effect = {
-			coe_save_ordered_rulers = yes
 			global_var:je_coe_concert_of_europe_var = {
+				save_scope_as = journal_entry
 				every_scope_je_involved = {
 					save_scope_as = gp
 					coe_build_sphere = {
 						SCOPE = scope:gp
+						journal = je_coe_concert_of_europe
 					}
 				}
+				coe_save_ordered_rulers = yes
 			}
 		}
 	}
@@ -63,8 +66,10 @@
 			save_scope_as = gp
 			coe_build_sphere = {
 				SCOPE = scope:gp
+				journal = je_coe_concert_of_europe
 			}
 		}
+		global_var:je_coe_concert_of_europe_var = { save_scope_as = journal_entry }
 		coe_save_ordered_rulers = yes
 	}
 	complete = {

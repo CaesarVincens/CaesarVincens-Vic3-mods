@@ -24,7 +24,7 @@ coe_build_sphere = {
 			}
 			NOR = {
 				$SCOPE$ = this
-				is_involved_in_journal_entry = je_coe_spheres_of_influence
+				is_involved_in_journal_entry = $journal$
 				is_indirect_subject_of = $SCOPE$
 			}
 		}
@@ -55,7 +55,7 @@ coe_build_sphere = {
 					}
 				}
 				$SCOPE$ = this
-				is_involved_in_journal_entry = je_coe_spheres_of_influence
+				is_involved_in_journal_entry = $journal$
 				is_direct_subject_of = $SCOPE$
 			}
 		}
@@ -92,12 +92,12 @@ coe_save_ordered_rulers = {
 }
 
 coe_save_ordered_ruler = {
-	global_var:je_coe_spheres_of_influence_var = {
+	scope:journal_entry = {
 		ordered_scope_je_involved = {
 			order_by = country_rank
 			position = $num$
 			ruler ?= {
-				global_var:je_coe_spheres_of_influence_var = {
+				scope:journal_entry = {
 					set_variable = {
 						name = coe_ruler_$num$
 						value = prev

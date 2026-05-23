@@ -1,7 +1,6 @@
 ﻿je_coe_spheres_of_influence = {
 	group = je_group_com_regional_organizations
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-	weight = 100
 
 	widget = {
 		gui = "gui/coe_journal_widgets/interorg_widgets.gui"
@@ -42,19 +41,22 @@
 			save_scope_as = gp
 			coe_build_sphere = {
 				SCOPE = scope:gp
+				journal = je_coe_spheres_of_influence
 			}
 		}
 	}
 	on_monthly_pulse = {
 		effect = {
-			coe_save_ordered_rulers = yes
 			global_var:je_coe_spheres_of_influence_var = {
+				save_scope_as = journal_entry
 				every_scope_je_involved = {
 					save_scope_as = gp
 					coe_build_sphere = {
 						SCOPE = scope:gp
+						journal = je_coe_spheres_of_influence
 					}
 				}
+				coe_save_ordered_rulers = yes
 			}
 		}
 	}
@@ -63,8 +65,10 @@
 			save_scope_as = gp
 			coe_build_sphere = {
 				SCOPE = scope:gp
+				journal = je_coe_spheres_of_influence
 			}
 		}
+		global_var:je_coe_spheres_of_influence_var = { save_scope_as = journal_entry }
 		coe_save_ordered_rulers = yes
 	}
 	complete = {
