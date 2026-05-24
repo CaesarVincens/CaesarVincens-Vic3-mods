@@ -8,10 +8,10 @@ coe_error_suppression.0001 = {
   }
   immediate = {
     fix_variable_error = { variable = coe_great_powers }
-    fix_variable_error = { variable = coe_ruler_0 }
-    fix_variable_error = { variable = coe_ruler_1 }
-    fix_variable_error = { variable = coe_ruler_2 }
-    fix_variable_error = { variable = coe_ruler_3 }
-    fix_variable_error = { variable = coe_ruler_4 }
+    fix_variable_error = { variable = coe_country_0 }
+    fix_variable_error = { variable = coe_country_1 }
+    fix_variable_error = { variable = coe_country_2 }
+    fix_variable_error = { variable = coe_country_3 }
+    fix_variable_error = { variable = coe_country_4 }
   }
 }

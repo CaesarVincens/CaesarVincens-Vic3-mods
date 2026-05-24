@@ -34,7 +34,7 @@
 			name = je_coe_concert_of_europe_var
 			value = scope:journal_entry
 		}
-		coe_save_ordered_rulers = yes
+		coe_save_ordered_countries = yes
 		#com_activate_interorg_sidebar = yes
 	}
 	immediate_all_involved = {
@@ -57,7 +57,7 @@
 						journal = je_coe_concert_of_europe
 					}
 				}
-				coe_save_ordered_rulers = yes
+				coe_save_ordered_countries = yes
 			}
 		}
 	}
@@ -70,7 +70,7 @@
 			}
 		}
 		global_var:je_coe_concert_of_europe_var = { save_scope_as = journal_entry }
-		coe_save_ordered_rulers = yes
+		coe_save_ordered_countries = yes
 	}
 	complete = {
 		always = no

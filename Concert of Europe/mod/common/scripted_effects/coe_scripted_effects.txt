@@ -83,25 +83,23 @@ coe_build_sphere = {
 	}
 }
 
-coe_save_ordered_rulers = {
-	coe_save_ordered_ruler = { num = 0 }
-	coe_save_ordered_ruler = { num = 1 }
-	coe_save_ordered_ruler = { num = 2 }
-	coe_save_ordered_ruler = { num = 3 }
-	coe_save_ordered_ruler = { num = 4 }
+coe_save_ordered_countries = {
+	coe_save_ordered_country = { num = 0 }
+	coe_save_ordered_country = { num = 1 }
+	coe_save_ordered_country = { num = 2 }
+	coe_save_ordered_country = { num = 3 }
+	coe_save_ordered_country = { num = 4 }
 }
 
-coe_save_ordered_ruler = {
+coe_save_ordered_country = {
 	scope:journal_entry = {
 		ordered_scope_je_involved = {
 			order_by = country_rank
 			position = $num$
-			ruler ?= {
-				scope:journal_entry = {
-					set_variable = {
-						name = coe_ruler_$num$
-						value = prev
-					}
+			scope:journal_entry = {
+				set_variable = {
+					name = coe_country_$num$
+					value = prev
 				}
 			}
 		}

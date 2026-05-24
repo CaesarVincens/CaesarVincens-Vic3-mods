@@ -7,6 +7,7 @@
 		name = "widget_coe_concert_of_europe"
 		container = "custom_widget_container_je_icon"
 	}
+	scripted_progress_bar = je_coe_concert_of_europe_strength
 
 	should_be_involved = {
 		country_rank >= rank_value:great_power
@@ -33,7 +34,7 @@
 			name = je_coe_spheres_of_influence_var
 			value = scope:journal_entry
 		}
-		coe_save_ordered_rulers = yes
+		coe_save_ordered_countries = yes
 		#com_activate_interorg_sidebar = yes
 	}
 	immediate_all_involved = {
@@ -47,6 +48,17 @@
 	}
 	on_monthly_pulse = {
 		effect = {
+			every_country = {
+				limit = {
+					country_rank >= rank_value:great_power
+					NOT = {
+						is_involved_in_journal_entry = je_coe_spheres_of_influence
+					}
+				}
+				je:je_coe_spheres_of_influence = {
+					add_involved_country = prev
+				}
+			}
 			global_var:je_coe_spheres_of_influence_var = {
 				save_scope_as = journal_entry
 				every_scope_je_involved = {
@@ -56,7 +68,7 @@
 						journal = je_coe_spheres_of_influence
 					}
 				}
-				coe_save_ordered_rulers = yes
+				coe_save_ordered_countries = yes
 			}
 		}
 	}
@@ -69,7 +81,7 @@
 			}
 		}
 		global_var:je_coe_spheres_of_influence_var = { save_scope_as = journal_entry }
-		coe_save_ordered_rulers = yes
+		coe_save_ordered_countries = yes
 	}
 	complete = {
 		always = no

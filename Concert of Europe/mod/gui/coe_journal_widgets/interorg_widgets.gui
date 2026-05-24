@@ -40,6 +40,7 @@ flowcontainer = {
 		#	}
 		#}
 		#coe_concert_of_europe_reason = { }
+		coe_concert_tabs = { }
 		coe_concert_of_europe_buttons = { }
 		coe_concert_of_europe_modifiers = { }
 		coe_concert_members = { }
@@ -102,7 +103,7 @@ types coe_concert_of_europe_types {
 
 				character_portrait_base = {
 					parentanchor = hcenter
-					datacontext = "[ComJournalVar('coe_ruler_3').GetCharacter]"
+					datacontext = "[ComJournalVar('coe_country_3').GetCountry.GetRuler]"
 
 					size = { 250 270 }
 
@@ -134,7 +135,7 @@ types coe_concert_of_europe_types {
 								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
 							}
 
-							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_3').GetCharacter )]"
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_country_3').GetCountry.GetRuler )]"
 							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 						}
 					}
@@ -166,7 +167,7 @@ types coe_concert_of_europe_types {
 
 				character_portrait_base = {
 					parentanchor = hcenter
-					datacontext = "[ComJournalVar('coe_ruler_1').GetCharacter]"
+					datacontext = "[ComJournalVar('coe_country_1').GetCountry.GetRuler]"
 
 					size = { 250 265 }
 
@@ -202,7 +203,7 @@ types coe_concert_of_europe_types {
 								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
 							}
 
-							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_1').GetCharacter )]"
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_country_1').GetCountry.GetRuler )]"
 							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 						}
 					}
@@ -233,7 +234,7 @@ types coe_concert_of_europe_types {
 
 				character_portrait_base = {
 					parentanchor = hcenter
-					datacontext = "[ComJournalVar('coe_ruler_4').GetCharacter]"
+					datacontext = "[ComJournalVar('coe_country_4').GetCountry.GetRuler]"
 
 					size = { 250 270 }
 
@@ -265,7 +266,7 @@ types coe_concert_of_europe_types {
 								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
 							}
 
-							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_4').GetCharacter )]"
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_country_4').GetCountry.GetRuler )]"
 							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 						}
 					}
@@ -297,7 +298,7 @@ types coe_concert_of_europe_types {
 
 				character_portrait_base = {
 					parentanchor = hcenter
-					datacontext = "[ComJournalVar('coe_ruler_2').GetCharacter]"
+					datacontext = "[ComJournalVar('coe_country_2').GetCountry.GetRuler]"
 
 					size = { 250 265 }
 
@@ -329,7 +330,7 @@ types coe_concert_of_europe_types {
 								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
 							}
 
-							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_2').GetCharacter )]"
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_country_2').GetCountry.GetRuler )]"
 							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 						}
 					}
@@ -356,7 +357,7 @@ types coe_concert_of_europe_types {
 				parentanchor = hcenter
 				maximumsize = { 100 265 } # This maximumsize is to make the button for this portrait not overlap the other character's buttons
 				visible = "[ComJournalVar('coe_ruler_0').IsSet]"
-				datacontext = "[ComJournalVar('coe_ruler_0').GetCharacter]"
+				datacontext = "[ComJournalVar('coe_country_0').GetCountry.GetRuler]"
 
 				character_portrait_base = {
 					parentanchor = hcenter
@@ -394,7 +395,7 @@ types coe_concert_of_europe_types {
 								onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
 							}
 
-							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_ruler_0').GetCharacter )]"
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( ComJournalVar('coe_country_0').GetCountry.GetRuler )]"
 							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 						}
 					}
@@ -405,7 +406,7 @@ types coe_concert_of_europe_types {
 			#BLOC MEMBER 1 FLAG
 			small_flag = {
 				visible = "[ComJournalVar('coe_ruler_0').IsSet]"
-				datacontext = "[ComJournalVar('coe_ruler_0').GetCharacter.GetCountry]"
+				datacontext = "[ComJournalVar('coe_country_0').GetCountry]"
 				position = { 0 -20 }
 				parentanchor = hcenter|bottom
 			}
@@ -415,7 +416,7 @@ types coe_concert_of_europe_types {
 				visible = "[ComJournalVar('coe_ruler_1').IsSet]"
 				position = { -110 -20 }
 				parentanchor = hcenter|bottom
-				datacontext = "[ComJournalVar('coe_ruler_1').GetCharacter.GetCountry]"
+				datacontext = "[ComJournalVar('coe_country_1').GetCountry]"
 			}
 
 			#BLOC MEMBER 3 FLAG
@@ -423,7 +424,7 @@ types coe_concert_of_europe_types {
 				visible = "[ComJournalVar('coe_ruler_2').IsSet]"
 				position = { 110 -20 }
 				parentanchor = hcenter|bottom
-				datacontext = "[ComJournalVar('coe_ruler_2').GetCharacter.GetCountry]"
+				datacontext = "[ComJournalVar('coe_country_2').GetCountry]"
 			}
 
 			#BLOC MEMBER 4 FLAG
@@ -431,7 +432,7 @@ types coe_concert_of_europe_types {
 				visible = "[ComJournalVar('coe_ruler_3').IsSet]"
 				position = { -210 -20 }
 				parentanchor = hcenter|bottom
-				datacontext = "[ComJournalVar('coe_ruler_3').GetCharacter.GetCountry]"
+				datacontext = "[ComJournalVar('coe_country_3').GetCountry]"
 			}
 
 			#BLOC MEMBER 5 FLAG
@@ -439,11 +440,80 @@ types coe_concert_of_europe_types {
 				visible = "[ComJournalVar('coe_ruler_4').IsSet]"
 				position = { 210 -20 }
 				parentanchor = hcenter|bottom
-				datacontext = "[ComJournalVar('coe_ruler_4').GetCharacter.GetCountry]"
+				datacontext = "[ComJournalVar('coe_country_4').GetCountry]"
 			}
 		}
 	}
+	type coe_concert_tabs = flowcontainer {
+		parentanchor = top|hcenter
+		direction = horizontal
+		minimumsize = { 540 40 }
+		### START DIVIDER
+		icon = {
+			texture = "gfx/interface/tabs/tab_divider.dds"
+			layoutpolicy_horizontal = fixed
+			layoutpolicy_vertical = expanding
+			size = { 5 -1 }
+			spriteType = Corneredstretched
+			spriteborder = { 0 20 }
+		}
 
+		# OVERVIEW TAB
+		tab_button = {
+			minimumsize = { 108 -1 }
+			visible = "[And(Not(GetVariableSystem.HasValue('coe_concert_tab', 'overview')), GetVariableSystem.Exists('coe_concert_tab'))]"
+			textbox = {
+				text = "coe_gui_overview_header"
+				default_format = "#title"
+				using = tab_text_properties
+			}
+			
+			onclick = "[GetVariableSystem.Set('coe_concert_tab', 'overview')]"
+			tooltip = "TAB_1"
+			input_action = "tab_1"
+			using = tooltip_above
+			
+		}
+		icon = {
+			minimumsize = { 108 -1 }
+			using = selected_tabs
+			visible = "[Or(GetVariableSystem.HasValue('coe_concert_tab', 'overview'), Not(GetVariableSystem.Exists('coe_concert_tab')))]"
+			
+			textbox = {
+				text = "coe_gui_overview_header"
+				default_format = "#variable"
+				using = tab_text_properties
+			}
+		}
+
+		# Player TAB
+		tab_button = {
+			minimumsize = { 108 -1 }
+			visible = "[Not(GetVariableSystem.HasValue('coe_concert_tab', 'player'))]"
+			textbox = {
+				text = "coe_gui_canon_law_player"
+				default_format = "#title"
+				using = tab_text_properties
+			}
+			
+			onclick = "[GetVariableSystem.Set('coe_concert_tab', 'player')]"
+			tooltip = "TAB_2"
+			input_action = "tab_2"
+			using = tooltip_above
+			
+		}
+		icon = {
+			minimumsize = { 108 -1 }
+			using = selected_tabs
+			visible = "[GetVariableSystem.HasValue('coe_concert_tab', 'player')]"
+			
+			textbox = {
+				text = "coe_gui_canon_law_player"
+				default_format = "#variable"
+				using = tab_text_properties
+			}
+		}
+	}
 	type coe_concert_of_europe_panel = widget {
 		# FRAME SIZE
 		size = { 530 300 }
@@ -1318,11 +1388,11 @@ types coe_concert_of_europe_types {
 						### LEVERAGE ON THE LEADER
 						power_bloc_header_grid_item = {
 							using = tooltip_se
-							tooltip = "LEVERAGE_ON_LEADER_NOT_APPLICABLE"
+							tooltip = "COE_SPHERELINGS_TOTAL"
 	
 							blockoverride "text" {
-								text = "NONE"
-								default_format = "#title"
+								text = "[Add_int32(GetDataModelSize(Country.MakeScope.GetList('coe_inner_sphere')), GetDataModelSize(Country.MakeScope.GetList('coe_outer_sphere')) )]"
+								default_format = "#variable"
 							}
 	
 							blockoverride "icon" {
